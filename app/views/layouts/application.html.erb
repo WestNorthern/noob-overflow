@@ -6,9 +6,95 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	
+  	<style>
+    	input[id="search"] {
+				height: 40px !important; 
+  			margin-top: 10px;
+   			border-radius: 10px !important;
+   			cursor: pointer;
+			}
+			.search-input{
+      	background-color: #82b1ff ;
+  			height: 40px !important; 
+  			margin-top: 10px;
+  			border-radius: 10px;
+  			width: 60% !important;
+			}
+			nav .input-field label {
+    		top: -23px;
+    		left: 0;
+    		cursor: pointer;
+			}
+
+			.user-hub {
+				width: 100%;
+			}
+    </style>
   </head>
 
   <body>
+
+  	<ul id="user-dropdown" class="dropdown-content">
+			<li><%= link_to "My Profile" %></li>
+			<li class="divider"></li>
+			<li class="divider"></li>
+		  <li><%= link_to "Ask Question" %></li>
+			<li><%= link_to "Log Out", logout_path, method: :delete %></li>
+		  
+		</ul>
+	  <div class="navbar-fixed">
+		  <nav class="green accent-2" >
+		    <div class="nav-wrapper">
+		      <div class="row">
+		        <div class="col s2">
+		          <ul class="left">
+		          <li><a href="#">n00b 0verfl0w</a></li>
+		          </ul>
+		        </div>
+		        <div class="col s6">
+		          <form class="search-input">
+		            <div class="input-field">
+		            <input id="search" type="search" />
+		            <label for="search"><i class="material-icons">search</i></label>
+		            </div>
+		          </form>
+		        </div>
+		        <div class="col s4">
+		          <ul class="right">
+		            <% if user_signed_in? %>
+		      				<li>
+		      					<a class="dropdown-button user-hub" href="#!" data-activates="user-dropdown" style="min-width: 130px;">
+		      						<%# current_user.full_name %>
+		      						<p>User Name</p>
+		      
+		      						<i class="material-icons right">arrow_drop_down</i>
+		      					</a>
+		      					<li> <%# link_to "Index", users_path %></li>
+		      				</li>
+	        			<% else %>
+	        				<li><%# link_to "Log In", new_session_path %></li>
+	        				<li><%# link_to "Sign Up", new_user_path %></li>
+	        			<% end %>
+		          </ul>
+		        </div>
+		      </div>
+		    </div>
+		  </nav>
+		</div>
+
+  <body>
     <%= yield %>
+
+    <script>
+    	$(function(){
+
+				$(".dropdown-button").dropdown({ hover: false });
+
+				$(".button-collapse").sideNav();
+
+
+			});
+    </script>
   </body>
 </html>

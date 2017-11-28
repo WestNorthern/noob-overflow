@@ -52,3 +52,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'materialize-sass'
+gem 'restful_routing'
+gem 'material_icons'
+gem 'paperclip'
