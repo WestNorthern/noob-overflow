@@ -2,7 +2,7 @@
 
 noob overflow
 
-*User:
+#User:
 
 -sign up
 -sign in
@@ -20,7 +20,7 @@ noob overflow
 -users gains achievements (trophies) for reputation gained
 
 
-*Question:
+#Question:
 
 -user can post question
 -questions are displayed on index page
@@ -30,13 +30,13 @@ noob overflow
 -questions can be commented on
 -questions are searchable (by tags)
 
-*Comments:
+#Comments:
 
 -comments can be up/down voted
 -comments can include tags
 -comments are searchable (by tags)
 
-*Blogs:
+#Blogs:
 
 -user can view blog pages
 -blogs are searchable (by tags)
