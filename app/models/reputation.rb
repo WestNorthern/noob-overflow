@@ -1,0 +1,2 @@
+class Reputation < ApplicationRecord
+end
