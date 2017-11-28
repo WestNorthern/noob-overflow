@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+noob overflow
 
-Things you may want to cover:
+User:
 
-* Ruby version
+-sign up
+-sign in
+-sign out
+-delete account
 
-* System dependencies
+-post questions
+-post/delete comments
+-up/down vote comments
 
-* Configuration
+-user is notified by e-mail when a question has been answered
+-user can customize profile (with trophies displayed)
+-users profiles can be viewed
+-users can gain and lose reputation
+-users gains achievements (trophies) for reputation gained
 
-* Database creation
 
-* Database initialization
+Question:
 
-* How to run the test suite
+-user can post question
+-questions are displayed on index page
+-questions have tags
+-question track and display number of views
+-questions can be up/down voted
+-questions can be commented on
+-questions are searchable (by tags)
 
-* Services (job queues, cache servers, search engines, etc.)
+Comments:
 
-* Deployment instructions
+-comments can be up/down voted
+-comments can include tags
+-comments are searchable (by tags)
 
-* ...
+Blogs:
+
+-user can view blog pages
+-blogs are searchable (by tags)
+-users can comment on blog posts
