@@ -1,7 +1,7 @@
                   Prefix Verb   URI Pattern                    Controller#Action
-        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
-            user_session POST   /users/sign_in(.:format)       devise/sessions#create
-    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+        new_user_session GET    /users/sign_in(.:format)       users/sessions#new
+            user_session POST   /users/sign_in(.:format)       users/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
        new_user_password GET    /users/password/new(.:format)  devise/passwords#new
       edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
            user_password PATCH  /users/password(.:format)      devise/passwords#update
@@ -48,7 +48,4 @@ cancel_user_registration GET    /users/cancel(.:format)        users/registratio
                          PATCH  /comments/:id(.:format)        comments#update
                          PUT    /comments/:id(.:format)        comments#update
                          DELETE /comments/:id(.:format)        comments#destroy
-
-
                     root GET    /                              questions#index
-

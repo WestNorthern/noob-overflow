@@ -2,3 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#user_wrapper {
+	.name_photo {
+		padding: 2% 0 0 2%;
+	}
+	.aboot{
+		padding-left: 2%;
+		p {
+			padding-bottom: 2%;
+		}
+	}
+}

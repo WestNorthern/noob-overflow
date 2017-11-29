@@ -65,10 +65,10 @@
 		        <div class="col s5">
 		          <ul class="right">
 		            <% if user_signed_in? %>
+ 	      					<li> <%= link_to "Ask Question", new_question_path %></li>
 		      				<li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><%= current_user.username %>
 	      						<i class="material-icons right">arrow_drop_down</i></a>
 	      					</li>
-	      					<li> <%= link_to "Ask Question", new_question_path %></li>
 	        			<% else %>
 	        				<li><%= link_to "Login", new_user_session_path %></li>
 		        			<li><%= link_to "Create Account", new_user_registration_path %></li>
