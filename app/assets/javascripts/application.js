@@ -12,9 +12,9 @@
 //
 //= require rails-ujs
 //= require jquery3
+//= require jquery
 //= require turbolinks
 //= require jquery_ujs
-//= require jquery-ui
 //= require jquery.purr
 //= require best_in_place
 //= require materialize
