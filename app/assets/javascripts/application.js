@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery3
+//= require jquery
 //= require turbolinks
 //= require jquery_ujs
 //= require jquery.purr
