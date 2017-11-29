@@ -3,6 +3,13 @@
 
 
 <%= render :partial => "question", :locals => { :question => @question } %>
+<%= render '/answers/answer_form' %>
+<div class=" row answer_wrapper">
+	<% @answers.all.reverse.each do |answer| %>
+		<%= render answer %>
+	<% end %>
+</div>
+
 
 <h5>Comments</h5>
 
@@ -20,7 +27,6 @@
     </div>
   </div>
 </div>
-
 <ul class="comments">
   <%= render(partial: 'comments/comment', collection: @question.comments) %>
 </ul>
