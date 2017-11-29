@@ -6,6 +6,7 @@
 	<% @questions.each do |question| %>
 		
 		<%= render :partial => "question", :locals => { :question => question } %>
+		<a href="#"><%= link_to "View Full Question...", question %></a>
 
 	<% end %>
 

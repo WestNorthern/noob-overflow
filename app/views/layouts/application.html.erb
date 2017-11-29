@@ -51,7 +51,7 @@
 		      <div class="row">
 		        <div class="col s2">
 		          <ul class="left">
-		          <li><a href="#">n00b 0verfl0w</a></li>
+		          <li><a href="#"><%= link_to "n00b 0verfl0w", root_path %></a></li>
 		          </ul>
 		        </div>
 		        <div class="col s5">
@@ -68,7 +68,7 @@
 		      				<li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><%= current_user.username %>
 	      						<i class="material-icons right">arrow_drop_down</i></a>
 	      					</li>
-	      					<li> <%= link_to "Questions", new_question_path %></li>
+	      					<li> <%= link_to "Ask Question", new_question_path %></li>
 	        			<% else %>
 	        				<li><%= link_to "Login", new_user_session_path %></li>
 		        			<li><%= link_to "Create Account", new_user_registration_path %></li>
