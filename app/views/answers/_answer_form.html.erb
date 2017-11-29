@@ -1,0 +1,8 @@
+<%= form_with  model: Answer.new do |f| %>
+	<div class="new_post_content">
+  	<%= f.text_area :content, placeholder: 
+  	'Type your answer here', class: "form-control", maxlength:150 %>
+		<%= f.hidden_field :question_id, value: @question.id %>
+		<%= f.submit class: "btn btn-primary post_submit" %>
+	</div>
+<% end -%>

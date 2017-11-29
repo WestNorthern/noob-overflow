@@ -3,3 +3,9 @@
 
 
 <%= render :partial => "question", :locals => { :question => @question } %>
+<%= render '/answers/answer_form' %>
+<div class=" row answer_wrapper">
+	<% @answers.all.reverse.each do |answer| %>
+		<%= render answer %>
+	<% end %>
+</div>
