@@ -12,6 +12,7 @@
 			<% if post.user.id == current_user.id %>
 			<%= link_to "Edit Post", edit_post_path(post)  %>
 			<%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete'%>
+			<%= link_to "Full Post", post %>
 		<% end %>	
 		</div>
 	</div>

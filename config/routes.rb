@@ -4,10 +4,22 @@ Rails.application.routes.draw do
       }
 
 	resources :users, only: [:index, :show] 
-  resources :questions
-  resources :answers
-  resources :posts
-  resources :comments
+  
+  resources :answers do
+  	resources :comments
+  end
+  
+  resources :posts do
+  	resources :comments
+  end
+
+  resources :comments do
+  	resources :comments
+  end
+
+  resources :questions do
+  	resources :comments
+  end
 
  	root 'questions#index' 
 
