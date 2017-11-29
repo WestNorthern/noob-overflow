@@ -1,2 +1,9 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.account{
+	textarea{
+		width: 100%;
+		min-height: 100px;
+	}
+}
