@@ -48,4 +48,7 @@ cancel_user_registration GET    /users/cancel(.:format)        users/registratio
                          PATCH  /comments/:id(.:format)        comments#update
                          PUT    /comments/:id(.:format)        comments#update
                          DELETE /comments/:id(.:format)        comments#destroy
+
+
                     root GET    /                              questions#index
+
