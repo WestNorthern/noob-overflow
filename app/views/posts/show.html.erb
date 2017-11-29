@@ -9,3 +9,25 @@
 		</div>
 	<% end %>
 </div>
+
+
+<h3>Comments</h3>
+
+<div class="row">
+  <div class="col s12 m8">
+    <div class="card-panel grey lighten-3">
+      <span class="white black-text">
+      	<%= form_for [@post, Comment.new], scope: 'comment', remote: true do |f| %>
+      		<%= f.hidden_field :user_id, value: @user.id %>
+					<%= f.text_area :content, placeholder: "Add a comment", class: 'white' %><br/><br/>
+					<%= f.submit 'Comment', :class => 'waves-effect waves-light btn comment', remote: true %>
+				<% end %>
+
+      </span>
+    </div>
+  </div>
+</div>
+
+<ul class="comments">
+  <%= render(partial: 'comments/comment', collection: @post.comments) %>
+</ul>

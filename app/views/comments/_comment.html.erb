@@ -1,0 +1,48 @@
+<li style="padding-left: 4%;" class="comment">
+  <div class="row">
+    <div class="col s12 m8">
+      <div class="card grey">
+        <div class="card-content white black-text">
+          <span class="card-title"><%= comment.user.username %></span>
+          <p><%= best_in_place_if comment.user.id == current_user.id, comment, :content, :as => :textarea %></p> 
+        </div>
+        <div class="card-action">
+          <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+          <button type="button" class="waves-effect waves-light btn reply-button right">Reply</button>
+          <small><%= link_to "Delete", post_comment_path(comment.id, comment), method: :delete, class: "waves-effect waves-light btn delete-comment", remote: true, style: "float: right;" %></small>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row reply-div" style="display: none;">
+    <div class="card col s12 m8 grey lighten-3">
+      <%= form_for [comment, Comment.new], remote: true do |f| %>
+        <div class="card-content  black-text">
+          
+          <%= f.text_area :content, placeholder: "Add a Reply", class: 'white' %><br/>
+          <%= f.hidden_field :user_id, value: @user.id %>
+          <%= f.submit 'Reply', :class => 'waves-effect waves-light btn reply' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <ul>
+      <%= render partial: 'comments/comment', collection: comment.comments %>
+  </ul>
+
+</li>
+
+<script>
+  $(".reply-button").on('click', function() {
+    $(this).hide();
+    $(".reply-div").show();
+ });
+
+  $(".reply").on('click', function() {
+    $(".reply-button").show();
+    $(".reply-div").hide();
+ });
+</script>
