@@ -1,0 +1,8 @@
+<%= form_with  model: @post do |f| %>
+	<div class="new_post_content">
+		<%= f.text_area :title, placeholder: 'Title' %>
+		<%= f.text_area :content, placeholder: 
+		'Content' %>
+		<%= f.submit class: "post_submit" %>
+	</div>
+<% end -%>
