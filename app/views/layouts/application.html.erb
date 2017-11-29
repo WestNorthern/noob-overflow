@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   	
   	<style>
     	input[id="search"] {
@@ -37,13 +39,14 @@
   </head>
 
   <body>
-
-  	<ul id="user-dropdown" class="dropdown-content">
-			<li><%= link_to "My Profile" %></li>
-			<li class="divider"></li>
-			<li class="divider"></li>
-		  <li><%= link_to "Ask Question" %></li>
-			<li><%# link_to "Log Out", logout_path, method: :delete %></li>
+		<% if user_signed_in? %>
+ 	  	<ul id="user-dropdown" class="dropdown-content">
+ 	  		<li><%= link_to "View Profile", user_path(current_user) %></li>
+	  		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+	  		<li class="divider"></li>
+	  		<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			</ul>
+		<% end %>
 		  
 		</ul>
 	  <div class="navbar-fixed">
@@ -66,18 +69,13 @@
 		        <div class="col s4">
 		          <ul class="right">
 		            <% if user_signed_in? %>
-		      				<li>
-		      					<a class="dropdown-button user-hub" href="#!" data-activates="user-dropdown" style="min-width: 130px;">
-		      						<%# current_user.full_name %>
-		      						<p>User Name</p>
-		      
-		      						<i class="material-icons right">arrow_drop_down</i>
-		      					</a>
-		      					<li> <%# link_to "Index", users_path %></li>
-		      				</li>
+		      				<li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><%= current_user.username %>
+	      						<i class="material-icons right">arrow_drop_down</i></a>
+	      					</li>
+	      					<li> <%# link_to "Index", users_path %></li>
 	        			<% else %>
-	        				<li><%# link_to "Log In", new_session_path %></li>
-	        				<li><%# link_to "Sign Up", new_user_path %></li>
+	        				<li><%= link_to "Login", new_user_session_path %></li>
+		        			<li><%= link_to "Create Account", new_user_registration_path %></li>
 	        			<% end %>
 		          </ul>
 		        </div>
