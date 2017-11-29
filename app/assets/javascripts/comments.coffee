@@ -4,5 +4,7 @@
 
 
 $(document).on 'turbolinks:load', ->
-	$('.delete-comment').on 'ajax:success', ->
+	$(document).on 'ajax:success', '.delete-comment', ->
 		$(this).closest('.comment').remove()
+	$(document).on 'click', '.delete-comment', ->
+		alert 'yup'
