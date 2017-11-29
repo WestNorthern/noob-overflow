@@ -1,2 +1,7 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<body id="post_index_body">
+	<div class="post_wrapper">
+		<% @posts.all.reverse.each do |post| %>
+			<%= render post %>
+		<% end %>
+	</div>
+</body>
