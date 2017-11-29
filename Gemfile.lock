@@ -42,6 +42,9 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     bcrypt (3.1.11)
+    best_in_place (3.0.3)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.1.0)
@@ -210,6 +213,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  best_in_place (~> 3.0.1)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)

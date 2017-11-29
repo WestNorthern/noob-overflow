@@ -1,2 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post_wrapper">
+	<% current_user.posts.all.reverse.each do |post| %>
+		<%= render post %>
+	<% end %>
+</div>
