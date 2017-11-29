@@ -1,20 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
 <div class="post_wrapper">
-  <div class="post_container">
-  	<div name="" class="post_content" cols="30" rows="10" readonly="true">
-  		<%= @post.title %><br/>
-  		<%= @post.content %>
-			<p>
-				<small>
-					<%= @post.created_at.strftime("Posted by you on %m/%d/%Y") %> 
-					<%= @post.created_at.strftime("at %I:%M%p") %>
-				</small>
-			</p>
-	  	<% if @post.user.id == current_user.id %>
-				<%= link_to "Edit Post", edit_post_path(@post)  %>
-				<%= link_to "Delete", @post, method: :delete, remote: true, class: 'post_delete'%>
-			<% end %>	
-  	</div>
-	</div>
+	<% current_user.posts.all.reverse.each do |post| %>
+		<%= render post %>
+	<% end %>
 </div>
