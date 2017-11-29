@@ -11,12 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require turbolinks
 //= require jquery3
 //= require jquery
-//= require turbolinks
 //= require jquery_ujs
 //= require jquery.purr
 //= require best_in_place
 //= require materialize
-//= require best_in_place.jquery-ui
-//= require_tree .
+//= require_tree
+
+

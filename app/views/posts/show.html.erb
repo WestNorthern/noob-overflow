@@ -1,6 +1,12 @@
-<div class="post_wrapper">
+<div class="row post_wrapper">
 	<% current_user.posts.all.reverse.each do |post| %>
-		<%= render post %>
+		<div class="col s12 m6">
+			<div class="card hoverable">
+				<div class="card-content">
+						<%= render post %>
+				</div>
+			</div>
+		</div>
 	<% end %>
 </div>
 
