@@ -1,13 +1,17 @@
+
 <div class="row post_wrapper">
 	<% @posts.all.reverse.each do |post| %>
-		<div class="col s10 offset-s1">
-			<div class="card hoverable">
-				<div class="card-content">
-					<%= render post, full: true %>
+		<div class="col s10 offset-s1 index-card">
+			<%= link_to post do %>
+				<div class="card hoverable">
+					<div class="card-content row">
+						<%= render post, full: true %>
+					</div>
 				</div>
-			</div>
+			<% end %>
 		</div>
 		<br>
 	<% end %>
+	<br>
+	<hr>
 </div>
-
