@@ -1,7 +1,16 @@
 <div class="post_wrapper">
 	<div class="post_content">
-		<h3><%= post.title %></h3>
-		<p><%= post.content %><p>
+
+		<%= markdown(### post.title) %>
+		<%= markdown(post.content) %>
+	<div>
+		<small>
+			Posted by
+			<%= post.user.username %>
+			<%= post.created_at.strftime("on %m/%d/%Y") %> 
+			<%= post.created_at.strftime("at %I:%M%p") %>
+		</small>
+	</div>
 		<div>
 			<small>
 				Posted by:

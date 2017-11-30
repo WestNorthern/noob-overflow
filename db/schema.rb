@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20171130015115) do
 
   create_table "answers", force: :cascade do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171130015115) do
     t.integer "reputation", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "markdown_content"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
