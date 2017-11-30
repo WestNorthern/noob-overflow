@@ -1,7 +1,7 @@
 <div class="post_wrapper">
 	<div class="post_content">
 
-		<div class="vote-box">
+		<div class="vote-box card-panel hoverable">
 			<div class="upvote"></div>
 			<div class="rep-value">2</div>
 			<div class="downvote"></div>
@@ -23,7 +23,9 @@
 		</p>
 		<p>
 		<% if local_assigns[:full] %>
-			<%= markdown(post.content) %>
+			<div class="truncate"> 
+				<%= markdown(post.content) %>
+			</div>
 		<% else %>
 			<%= markdown(post.content) %>
 		<% end %>

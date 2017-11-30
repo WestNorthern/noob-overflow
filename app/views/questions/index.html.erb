@@ -2,9 +2,13 @@
 <p>Find me in app/views/questions/index.html.erb</p>
 
 <div class="questions">
-
-	<% @questions.each do |question| %>
-		<%= render :partial => "question", :locals => { :question => question } %>
-	<% end %>
-
+	<div class="row question">
+  	<div class="col s10 offset-s1">
+    	<div class="card hoverable">
+				<% @questions.each do |question| %>
+					<%= render question, full: true %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
