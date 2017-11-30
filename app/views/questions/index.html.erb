@@ -1,14 +1,16 @@
 <h1>Questions#index</h1>
 <p>Find me in app/views/questions/index.html.erb</p>
 
-<div class="questions">
-	<div class="row question">
-  	<div class="col s10 offset-s1">
-    	<div class="card hoverable">
-				<% @questions.each do |question| %>
-					<%= render question, full: true %>
-				<% end %>
+<% @questions.each do |question| %>
+	<div class="questions">
+		<div class="row question">
+			<%= link_to question do %>
+	  	<div class="col s10 offset-s1 index-card">
+	    	<div class="card hoverable">
+						<%= render question, full: true %>
+				</div>
 			</div>
+			<% end %>
 		</div>
 	</div>
-</div>
+<% end %>

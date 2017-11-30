@@ -1,3 +1,9 @@
+<div class="vote-box card-panel hoverable">
+  <div class="upvote"></div>
+  <div class="rep-value">2</div>
+  <div class="downvote"></div>
+  <div class="star-button"></div>
+</div>
 
 <div class="card-content">
   <h4 style="text-align: center;"><%= question.title %></h4>
@@ -5,22 +11,19 @@
   <p><%= markdown(question.content) %></p>
 </div>
 <div class="card-action">
-<small>
-  Posted By:
-  <% if question.user.deleted_at.nil? %>
-    <%= render partial: 'users/user', locals: {user: question.user} %>
-  <% else %>
-    <p>DELETED</p>
+  <small>
+    Posted By:
+    <% if question.user.deleted_at.nil? %>
+      <%= render partial: 'users/user', locals: {user: question.user} %>
+    <% else %>
+      <p>DELETED</p>
+    <% end %>
+    <%= question.created_at.strftime("on %m/%d/%Y") %> 
+    <%= question.created_at.strftime("at %I:%M%p") %>
+  </small> <br>
+  <% if question.user == current_user %>
+    <a href="#"> <%= link_to "Edit Question", edit_question_path(question) %> </a>
+    <a href="#"> <%= link_to 'Destroy',  question,  method: :delete, data: { confirm: 'Are you sure?' } %> </a>
   <% end %>
-  <%= question.created_at.strftime("on %m/%d/%Y") %> 
-  <%= question.created_at.strftime("at %I:%M%p") %>
-</small> <br>
-<% if question.user == current_user %>
-  <a href="#"> <%= link_to "Edit Question", edit_question_path(question) %> </a>
-  <a href="#"> <%= link_to 'Destroy',  question,  method: :delete, data: { confirm: 'Are you sure?' } %> </a>
-<% end %>
-<% if params[:id].nil? %>
-  <a href="#"><%= link_to "View Full Question...", question %></a>
-<% end %>
 </div>
 
