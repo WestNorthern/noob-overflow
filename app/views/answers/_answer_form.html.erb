@@ -1,8 +1,10 @@
-<%= form_with  model: Answer.new, class: "answer_form" do |f| %>
-	<div class="new_post_content card-content black-text">
-  	<%= f.text_area :content, placeholder: 
-  	'Type your answer here', class: 'white col s9', id: "comment-field" %>
-		<%= f.hidden_field :question_id, value: @question.id %>
-		<%= f.submit class: "waves-effect waves-light btn right reply col s2" %>
-	</div>
-<% end -%>
+<div class="col card s10 offset-s1 hoverable">
+	<%= form_with  model: Answer.new, class: "answer_form" do |f| %>
+		<div class="new_post_content card-content black-text">
+	  	<%= f.text_area :content, placeholder: 
+	  	'Type your answer here', class: 'white col s9', style: "min-height: 400px; margin-bottom: 20px; " %>
+			<%= f.hidden_field :question_id, value: @question.id %>
+			<%= f.submit class: "waves-effect waves-light btn right reply col s2" %>
+		</div>
+	<% end -%>
+</div>

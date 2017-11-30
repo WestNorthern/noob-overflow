@@ -2,29 +2,30 @@
 <p>Find me in app/views/questions/show.html.erb</p>
 
 <div class="row question">
-
-  <div class="col s12 m8">
-  	<div class="card hoverable">
-			<%= render :partial => "question", :locals => { :question => @question } %>
-			<div class="row card-panel grey lighten-3">
-      	<%= form_for [@question, Comment.new], scope: 'comment', remote: true, class: "comment-field" do |f| %>
-      		<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
-      		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
-				<% end %>
-			</div>
-  	</div>
-  </div>
+  <div class="col s10 offset-s1 card hoverable">
+		<%= render :partial => "question", :locals => { :question => @question } %>
+		<div class="row card-panel grey lighten-3">
+      <ul class="comments">
+        <%= render(partial: 'comments/comment', collection: @question.comments) %>  
+      </ul>
+    	<%= form_for [@question, Comment.new], scope: 'comment', remote: true do |f| %>
+    		<%= f.hidden_field :user_id, value: @user.id %>
+				<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
+    		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
+			<% end %>
+		</div>
+	</div>
 </div>
-<%= render '/answers/answer_form' %>
-<div class=" row answer_wrapper">
+
+
+
+<div class="row answer_wrapper">
+  <div class="col s10 offset-s1 card hoverable"></div>
 	<% @answers.all.reverse.each do |answer| %>
 		<%= render answer %>
 	<% end %>
 </div>
 
-
-<ul class="comments">
-  <%= render(partial: 'comments/comment', collection: @question.comments) %>
-</ul>
-
+<div class="row">
+  <%= render '/answers/answer_form' %>
+</div>
