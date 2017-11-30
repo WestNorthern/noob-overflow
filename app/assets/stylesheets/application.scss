@@ -34,3 +34,59 @@ pre {
 	box-sizing: border-box;
 	padding: 2%;
 }
+
+.vote-box {
+	position: relative;
+	top: 3%;
+	left: 3%;
+	background: aliceblue;
+	width: 50px;
+	height: 140px;
+	border-radius: 3px;
+	border: 2px solid black;
+}
+
+.upvote {
+	position: absolute;
+	top: 3%;
+	left: 15%;
+	background: black;
+	width: 70%;
+	height: 25%;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	cursor: pointer;
+}
+
+.downvote {
+	position: absolute;
+	bottom: 30%;
+	left: 15%;
+	background: black;
+	width: 70%;
+	height: 25%;
+	clip-path: polygon(50% 100%, 0 0, 100% 0);
+	cursor: pointer;
+}
+
+.rep-value {
+	position: absolute;
+	top: 30%;
+	left: 40%;
+	color: black;
+	width: 70%;
+	height: 10px;
+}
+
+.star-button {
+	position: absolute;
+	bottom: 3%;
+	left: 15%;
+	background: orange;
+	width: 70%;
+	height: 30px;
+	clip-path: polygon(50% 0%, 82% 100%, 0% 38%, 100% 38%, 18% 100%);
+	cursor: pointer;
+}
+
+
+
