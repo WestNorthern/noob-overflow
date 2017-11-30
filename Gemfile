@@ -60,3 +60,7 @@ gem 'paperclip'
 gem 'jquery-rails'
 #paranoia allows us to do soft deletes
 gem 'paranoia', '~> 2.4'
+# RedCarpet allows addition of markdown
+gem "redcarpet"
+# CodeRay helps with syntax highlighting
+gem 'coderay'
