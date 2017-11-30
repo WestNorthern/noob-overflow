@@ -7,9 +7,13 @@
 			<% end %>
 			<div class="card-content white black-text">
 				<span class="card-title">Answer from <%= answer.user.username %></span>
-          <p>
-          	<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :as => :textarea %>
-          </p>
+          <div class="card-content">
+          	<% if local_assigns[:full] %>
+							<%= truncate(markdown(answer.content), length: 90, escape: false) %>
+						<% else %>
+	          	<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :display_with => proc { |v| markdown(v)}, :type => :textarea %>
+	          <% end %>
+          </div>
           <hr>
           <small class="col s12 m8">
             Submitted <%= time_ago_in_words(answer.created_at) %> ago
