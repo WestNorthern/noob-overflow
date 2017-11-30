@@ -1,8 +1,29 @@
-<%= form_with  model: @post do |f| %>
-	<div class="new_post_content">
-		<%= f.text_area :title, placeholder: 'Title' %>
-		<%= f.text_area :content, placeholder: 
-		'Content' %>
-		<%= f.submit class: "post_submit" %>
+
+
+
+<div class="row post_wrapper">
+	<div class="col s10 offset-s1">
+		<div class="card hoverable">
+			<% if @post.user %>
+				<div class="card-title" style="text-align: center;">
+					<%= best_in_place_if @post.user.id == current_user.id, @post, :title, :type => :input %>
+				</div>
+				<div class="card-content">
+					<%= best_in_place_if @post.user.id == current_user.id, @post, :content, :display_with => proc { |v| markdown(v)}, :type => :textarea %>
+				</div>
+			<% else %>
+				<%= form_with  model: @post do |f| %>
+					<div class="new_post_content">
+						<div class="card-title">
+							<%= f.text_area :title, placeholder: 'Title' %>
+						</div>
+					</div>
+					<div class="card-content">
+						<%= f.text_area :content, placeholder: 'Content' %>
+						<%= f.submit class: "post_submit" %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
 	</div>
-<% end %>
+</div>

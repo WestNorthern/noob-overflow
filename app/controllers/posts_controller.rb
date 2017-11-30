@@ -21,10 +21,23 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  # def update
+  #   @post = Post.find(params[:id])
+  #   @post.update(post_params)
+  #   redirect_to @post
+  # end
+
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to @post
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to(@post, flash[:alert] = 'Comment was successfully updated.') }
+        format.json { respond_with_bip(@post) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@post) }
+      end
+    end
   end
 
   def destroy
