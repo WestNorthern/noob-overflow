@@ -16,6 +16,13 @@
   	</div>
   </div>
 </div>
+<%= render '/answers/answer_form' %>
+<div class=" row answer_wrapper">
+	<% @answers.all.reverse.each do |answer| %>
+		<%= render answer %>
+	<% end %>
+</div>
+
 
 <ul class="comments">
   <%= render(partial: 'comments/comment', collection: @question.comments) %>

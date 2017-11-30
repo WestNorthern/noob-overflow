@@ -1,8 +1,8 @@
-<%= form_with  model: Answer.new do |f| %>
-	<div class="new_post_content">
+<%= form_with  model: Answer.new, class: "answer_form" do |f| %>
+	<div class="new_post_content card-content black-text">
   	<%= f.text_area :content, placeholder: 
-  	'Type your answer here', class: "form-control", maxlength:150 %>
+  	'Type your answer here', class: 'white col s9', id: "comment-field" %>
 		<%= f.hidden_field :question_id, value: @question.id %>
-		<%= f.submit class: "btn btn-primary post_submit" %>
+		<%= f.submit class: "waves-effect waves-light btn right reply col s2" %>
 	</div>
 <% end -%>
