@@ -11,7 +11,6 @@
         <small>
           Posted By:
           <% if question.user.deleted_at.nil? %>
-            <p><a href="#"><%= link_to "#{question.user.username}", question.user %></a></p>
             <%= render partial: 'users/user', locals: {user: question.user} %>
           <% else %>
             <p>DELETED</p>
