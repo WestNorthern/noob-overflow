@@ -1,7 +1,7 @@
 <div class="user">
-	<%= user.username %> <br>
+	<%= link_to user.username, user %> <br>
 	<% if user.avatar? %>
-		<%= image_tag user.avatar.url(:thumb) %>
+		<%= image_tag user.avatar.url(:tiny) %>
 	<% end %>
 	<p>Reputation: <%= user.reputation %></p>
 </div>

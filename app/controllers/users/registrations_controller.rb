@@ -2,6 +2,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
+  def check_username
+    username_found = User.where(username: params[:username]).count > 0
+    icon = username_found ? "ERROR" : "SUCCESS"
+    render json: {icon: icon}
+  end
+
+  def check_email
+    email_found = User.where(email: params[:email]).count > 0
+    icon = email_found ? "ERROR" : "SUCCESS"
+    render json: {icon: icon}
+  end
+
   # GET /resource/sign_up
   def new
     super
