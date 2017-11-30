@@ -1,12 +1,13 @@
 <div class="row post_wrapper">
 	<% @posts.all.reverse.each do |post| %>
-		<div class="col s12 m6">
+		<div class="col s10 offset-s1">
 			<div class="card hoverable">
 				<div class="card-content">
-					<%= render post %>
+					<%= render post, full: true %>
 				</div>
 			</div>
 		</div>
+		<br>
 	<% end %>
 </div>
 
