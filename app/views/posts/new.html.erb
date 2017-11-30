@@ -2,7 +2,11 @@
 <p>Find me in app/views/posts/new.html.erb</p>
 <div class="new_post_container">
 	<div class="new_post_form_wrapper">
-		<%= render 'post_form' %>
+		<% if current_user.reputation >= 500 %>
+			<%= render 'post_form' %>
+		<% else %>
+			<h3><%= link_to "You Don't Belong Here! Go Back!", root_path %></h3>
+		<% end %>
 	</div>
 </div>
 

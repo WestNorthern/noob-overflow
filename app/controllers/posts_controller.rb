@@ -13,8 +13,6 @@ class PostsController < ApplicationController
   end
 
   def show
-
-    @posts = Post.all 
     @post = Post.find(params[:id])
     @user = @post.user
   end
