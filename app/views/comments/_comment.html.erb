@@ -1,58 +1,21 @@
 <li class="comment">
-
+  <hr>
   <div class="row">
     <div class="col s10 offset-s1">
-      <br>
-      <div class="card grey lighten-3">
+      <% if comment.user.id == current_user.id %>
         <%= link_to "X", post_comment_path(comment.id, comment), method: :delete, class: "waves-effect waves-light chip close delete-comment right", remote: true %>
-        <div class="card-content white black-text">
-          <span class="card-title"><%= comment.user.username %></span>
-
-          <p>
-            <%= best_in_place_if comment.user.id == current_user.id, comment, :content, :as => :textarea %>
-          </p>
-
-          <hr>
-
-          <small class="col s12 m8">
-            Submitted <%= time_ago_in_words(comment.created_at) %> ago
-          </small>
-
-        </div>
-        
-        <div class="card-action">
-
-        <%= form_for [comment, Comment.new], remote: true do |f| %>
-          <div class="card-content  black-text comment-input">
-
-            <%= f.hidden_field :user_id, value: @user.id %>
-            <%= f.text_area :content, placeholder: "Add a Reply", class: 'white col s9', id: "comment-field" %>
-            <%= f.submit 'Reply', :class => 'waves-effect waves-light btn reply right col s2' %>
-          </div>
-        <% end %>
-        <br>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row reply-div" style="display: none;">
-    <div class="card col s12 m8 grey lighten-3">
-      <%= form_for [comment, Comment.new], remote: true do |f| %>
-        <div class="card-content  black-text comment-input">
-          
-          <%= f.text_area :content, placeholder: "Add a Reply", class: 'white', id: "comment-field" %><br/>
-          <%= f.hidden_field :user_id, value: @user.id %>
-          <%= f.submit 'Reply', :class => 'waves-effect waves-light btn reply' %>
-        </div>
       <% end %>
+        
+
+      <p>
+        <%= best_in_place_if comment.user.id == current_user.id, comment, :content, :as => :textarea %> - <%= comment.user.username %>
+      </p>
+
+      <small class="col s12 m8">
+        Submitted <%= time_ago_in_words(comment.created_at) %> ago
+      </small>
+      <hr>
     </div>
   </div>
-  
-
-
-  <ul>
-      <%= render partial: 'comments/comment', collection: comment.comments %>
-  </ul>
-
 </li>
 
