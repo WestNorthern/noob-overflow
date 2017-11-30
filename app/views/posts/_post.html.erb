@@ -2,15 +2,11 @@
 	<div class="post_content">
 
 		<p style="text-align: center; font-size: 2em; "> <%= post.title %> </p>
-		<%= markdown(post.content) %>
-	<div>
-		<small>
-			Posted by
-			<%= post.user.username %>
-			<%= post.created_at.strftime("on %m/%d/%Y") %> 
-			<%= post.created_at.strftime("at %I:%M%p") %>
-		</small>
-	</div>
+		<% if local_assigns[:full] %>
+			<%= truncate(markdown(post.content), length: 90, escape: false) %>
+		<% else %>
+			<%= markdown(post.content) %>
+		<% end %>
 		<div>
 			<small>
 				Posted by:

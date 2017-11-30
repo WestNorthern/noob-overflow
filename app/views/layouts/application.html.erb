@@ -16,7 +16,7 @@
    			cursor: pointer;
 			}
 			.search-input{
-      	background-color: #82b1ff ;
+      	background-color: #ff9e80 ;
   			height: 40px !important; 
   			margin-top: 10px;
   			border-radius: 10px;
@@ -41,12 +41,15 @@
 	  		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
 	  		<li class="divider"></li>
 	  		<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+	  		<% if current_user.reputation >= 500 %>
+      		<li><%= link_to "New Blog Post", new_post_path %></li>
+      	<% end %>
 			</ul>
 		<% end %>
 		  
 		</ul>
 	  <div class="navbar-fixed">
-		  <nav class="green accent-2" >
+		  <nav class="deep-orange accent-2" >
 		    <div class="nav-wrapper">
 		      <div class="row">
 		        <div class="col s2">
@@ -65,9 +68,6 @@
 		        <div class="col s5">
 		          <ul class="right">
 		            <% if user_signed_in? %>
-		            	<% if current_user.reputation >= 500 %>
-		            		<li><%= link_to "New Blog Post", new_post_path %></li>
-		            	<% end %>
 
 		            	<li><%= link_to "View Blog Posts", posts_path %></li>
  	      					<li> <%= link_to "Ask Question", new_question_path %></li>
