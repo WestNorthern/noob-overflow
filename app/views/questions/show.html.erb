@@ -1,25 +1,21 @@
 <h1>Questions#show</h1>
 <p>Find me in app/views/questions/show.html.erb</p>
-
-
-<%= render :partial => "question", :locals => { :question => @question } %>
-
-<h5>Comments</h5>
-
-<div class="row">
+<div class="row question">
   <div class="col s12 m8">
-    <div class="card-panel white darken-3">
-      <span class="black-text">
+  	<div class="card hoverable">
+			<%= render :partial => "question", :locals => { :question => @question } %>
+			<div class="row card-panel grey lighten-3">
       	<%= form_for [@question, Comment.new], scope: 'comment', remote: true do |f| %>
       		<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.text_area :content, placeholder: "Add a comment" %><br/><br/>
-					<%= f.submit 'Comment', :class => 'waves-effect waves-light btn comment', remote: true %>
+					<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
+      		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
+					
 				<% end %>
-
-      </span>
-    </div>
+			</div>
+  	</div>
   </div>
 </div>
+
 
 <ul class="comments">
   <%= render(partial: 'comments/comment', collection: @question.comments) %>
