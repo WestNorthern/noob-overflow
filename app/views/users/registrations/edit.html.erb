@@ -17,17 +17,22 @@
 
           <div class="field">
             <%= f.label :username %><br />
-            <%= f.text_field :username, :class => 'validate' %>
+            <i class="tiny material-icons red-text" id="username_fail">sentiment_very_dissatisfied</i>
+            <i class="tiny material-icons green-text" id="username_win">sentiment_very_satisfied</i>
+            <%= f.text_field :username, :class => 'validate', id: 'new_username' %>
           </div>
 
           <div class="field">
             <%= f.label :about %><br />
+          
             <%= f.text_area :about, :class => 'validate' %>
           </div>
 
           <div class="field">
             <%= f.label :email %><br />
-            <%= f.email_field :email, :class => 'validate' %>
+            <i class="tiny material-icons red-text" id="email_fail">sentiment_very_dissatisfied</i>
+            <i class="tiny material-icons green-text" id="email_win">sentiment_very_satisfied</i>
+            <%= f.email_field :email, :class => 'validate', id: 'new_email' %>
           </div>
 
           <div class="field">

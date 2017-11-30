@@ -4,14 +4,19 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
-          <%= f.label :username %><br />
-          <%= f.text_field :username, :class => 'validate', autofocus: true %>
-        </div>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, :class => 'validate' %>
-        </div>
+          <div class="field">
+            <%= f.label :username %><br />
+            <i class="tiny material-icons red-text" id="username_fail">sentiment_very_dissatisfied</i>
+            <i class="tiny material-icons green-text" id="username_win">sentiment_very_satisfied</i>
+            <%= f.text_field :username, :class => 'validate', id: 'new_username' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <i class="tiny material-icons red-text" id="email_fail">sentiment_very_dissatisfied</i>
+            <i class="tiny material-icons green-text" id="email_win">sentiment_very_satisfied</i>
+            <%= f.email_field :email, :class => 'validate', id: 'new_email' %>
+          </div>
 
         <div class="field">
           <%= f.label :password %>
