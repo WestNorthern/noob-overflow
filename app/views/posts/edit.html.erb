@@ -1,3 +1,13 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h4 style="text-align: center;">
+	This post was created at <%= @post.created_at.to_formatted_s(:short) %>
+</h4>
+<% if @post.updated_at  %>
+	<h5 style="text-align: center;">And last updated at <%= @post.created_at.to_formatted_s(:short) %></h5>
+<% end %>
 <%= render "post_form" %>
+
+<br>
+
+<div class="row">
+	<%= link_to "Done?", @post, class: "waves-effect waves-light btn col s1 offset-s5" %>
+</div>
