@@ -5,5 +5,6 @@ $('.best_in_place').best_in_place()
 
 $(document).on 'turbolinks:load', ->
 	$(document).on 'ajax:success', '.answer_delete', ->
+		$(this).closest('.new_answer').remove()
+	$(document).on 'ajax:success', '.answer_delete', ->
 		$(this).closest('.answer_show').remove()
-
