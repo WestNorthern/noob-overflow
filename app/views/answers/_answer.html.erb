@@ -1,0 +1,14 @@
+<div class="row answer_show">
+	<div class="answer_content col s12 m6">
+		<div class="card hoverable">
+			<div class="card-content answer">
+				<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :as => :textarea %>
+				<div>
+					<% if answer.user.id == current_user.id %>
+						<%= link_to "Delete", answer, method: :delete, remote: true, class: 'answer_delete'%>
+					<% end %>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

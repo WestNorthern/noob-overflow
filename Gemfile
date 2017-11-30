@@ -58,3 +58,5 @@ gem 'restful_routing'
 gem 'material_icons'
 gem 'paperclip'
 gem 'jquery-rails'
+#paranoia allows us to do soft deletes
+gem 'paranoia', '~> 2.4'

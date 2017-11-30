@@ -1,7 +1,21 @@
 <div class="post_wrapper">
 	<div class="post_content">
-		<%= post.title %><br/>
+		<%= post.title %>
 		<%= post.content %>
+	<div>
+		<small>
+			Posted by
+			<%= post.user.username %>
+			<%= post.created_at.strftime("on %m/%d/%Y") %> 
+			<%= post.created_at.strftime("at %I:%M%p") %>
+		</small>
+	</div>
+		<div>
+			<% if post.user.id == current_user.id %>
+				<%= link_to "Edit Post", edit_post_path(post)  %>
+				<%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete'%>
+			<% end %>	
+		</div>
 	</div>
   <small>
     Posted by

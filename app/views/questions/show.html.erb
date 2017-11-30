@@ -1,6 +1,8 @@
 <h1>Questions#show</h1>
 <p>Find me in app/views/questions/show.html.erb</p>
+
 <div class="row question">
+
   <div class="col s12 m8">
   	<div class="card hoverable">
 			<%= render :partial => "question", :locals => { :question => @question } %>
@@ -15,7 +17,6 @@
   	</div>
   </div>
 </div>
-
 
 <ul class="comments">
   <%= render(partial: 'comments/comment', collection: @question.comments) %>
