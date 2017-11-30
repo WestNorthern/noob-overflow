@@ -1,34 +1,35 @@
 <div class="post_wrapper">
 	<div class="post_content">
-		<%= post.title %>
-		<%= post.content %>
-	<div>
-		<small>
-			Posted by
-			<%= post.user.username %>
-			<%= post.created_at.strftime("on %m/%d/%Y") %> 
-			<%= post.created_at.strftime("at %I:%M%p") %>
-		</small>
-	</div>
+		<h3><%= post.title %></h3>
+		<p><%= post.content %><p>
 		<div>
-			<% if post.user.id == current_user.id %>
-				<%= link_to "Edit Post", edit_post_path(post)  %>
-				<%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete'%>
-			<% end %>	
+			<small>
+				Posted by:
+				<% if params[:id].nil? %>
+					<% if post.user.deleted_at.nil? %>
+						<%= post.user.username %>
+					<% else %>
+						DELETED
+					<% end %>
+				<% else %>
+					<% if post.user.deleted_at.nil? %>
+						<%= render partial: 'users/user', locals: {user: post.user} %>
+					<% else %>
+						DELETED
+					<% end %>
+				<% end %>
+				<%= post.created_at.strftime("on %m/%d/%Y") %> 
+				<%= post.created_at.strftime("at %I:%M%p") %>
+			</small>
 		</div>
 	</div>
-  <small>
-    Posted by
-    <%= post.user.username %>
-    <%= post.created_at.strftime("on %m/%d/%Y") %> 
-    <%= post.created_at.strftime("at %I:%M%p") %>
-  </small>
-
-</div>
-<div>
-  <%= link_to "Full Post", post %>
-  <% if post.user.id == current_user.id %>
-    <%= link_to "Edit Post", edit_post_path(post)  %>
-    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete'%>
-  <% end %>	
+	<div>
+		<% if params[:id].nil? %>
+		  <%= link_to "Full Post", post %>
+		<% end %>	
+	  <% if post.user.id == current_user.id %>
+	    <%= link_to "Edit Post", edit_post_path(post)  %>
+	    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete'%>
+	  <% end %>	
+	</div>
 </div>

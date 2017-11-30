@@ -31,8 +31,8 @@
           </div>
 
           <div class="field">
-            <% if resource.present? %>
-              <%= image_tag resource.avatar.url(:thumb) %>
+            <% if resource.avatar? %>
+              <%= image_tag resource.avatar.url(:small) %>
             <% end %>
             <br />
             <%= f.label :avatar, "Pix0rz" %> <br />

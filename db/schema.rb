@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129230008) do
+ActiveRecord::Schema.define(version: 20171130015115) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 20171129230008) do
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -91,9 +103,9 @@ ActiveRecord::Schema.define(version: 20171129230008) do
     t.datetime "avatar_updated_at"
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email", "deleted_at"], name: "index_users_on_email_and_deleted_at", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["username", "deleted_at"], name: "index_users_on_username_and_deleted_at", unique: true
   end
 
 end

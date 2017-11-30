@@ -65,6 +65,11 @@
 		        <div class="col s5">
 		          <ul class="right">
 		            <% if user_signed_in? %>
+		            	<% if current_user.reputation >= 500 %>
+		            		<li><%= link_to "New Blog Post", new_post_path %></li>
+		            	<% end %>
+
+		            	<li><%= link_to "View Blog Posts", posts_path %></li>
  	      					<li> <%= link_to "Ask Question", new_question_path %></li>
 		      				<li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><%= current_user.username %>
 	      						<i class="material-icons right">arrow_drop_down</i></a>

@@ -1,15 +1,31 @@
-
-
-<div class="card-content">
-  <h3><%= question.title %></h3>
-  <hr>
-  <br>
-  <p><%= question.content %></p>
-</div>
-<div class="card-action">
-  <a href="#"><%= link_to "#{question.user.username}", question.user %></a>
-  <% if question.user == current_user %>
-    <a href="#"> <%= link_to "Edit Question", edit_question_path(question) %> </a>
-    <a href="#"> <%= link_to 'Destroy',  question,  method: :delete, data: { confirm: 'Are you sure?' } %> </a>
-  <% end %>
+<div class="row question">
+  <div class="col s12 m8">
+    <div class="card hoverable">
+      <div class="card-content">
+        <h3><%= question.title %></h3>
+        <hr>
+        <br>
+        <p><%= question.content %></p>
+      </div>
+      <div class="card-action">
+        <small>
+          Posted By:
+          <% if question.user.deleted_at.nil? %>
+            <p><a href="#"><%= link_to "#{question.user.username}", question.user %></a></p>
+          <% else %>
+            <p>DELETED</p>
+          <% end %>
+          <%= question.created_at.strftime("on %m/%d/%Y") %> 
+          <%= question.created_at.strftime("at %I:%M%p") %>
+        </small> <br>
+        <% if question.user == current_user %>
+          <a href="#"> <%= link_to "Edit Question", edit_question_path(question) %> </a>
+          <a href="#"> <%= link_to 'Destroy',  question,  method: :delete, data: { confirm: 'Are you sure?' } %> </a>
+        <% end %>
+        <% if params[:id].nil? %>
+          <a href="#"><%= link_to "View Full Question...", question %></a>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
