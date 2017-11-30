@@ -97,8 +97,8 @@ GEM
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.0)
-      mini_mime (>= 0.1.1)
+    mail (2.6.6)
+      mime-types (>= 1.16, < 4)
     material_icons (2.2.1)
       railties (>= 3.2)
     materialize-sass (0.100.2)
@@ -124,6 +124,8 @@ GEM
       mimemagic (~> 0.3.0)
     paranoia (2.4.0)
       activerecord (>= 4.0, < 5.2)
+    pony (1.11)
+      mail (>= 2.0)
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
@@ -226,10 +228,12 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mail (~> 2.6.0)
   material_icons
   materialize-sass
   paperclip
   paranoia (~> 2.4)
+  pony (~> 1.11)
   puma (~> 3.7)
   rails (~> 5.1.4)
   redcarpet
