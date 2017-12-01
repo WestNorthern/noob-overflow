@@ -19,7 +19,7 @@
 <div class="row new_answer">  
 </div>
 <div class="answers">
-  <% @answers.all.reverse.each do |answer| %>
+  <% @question.answers.all.reverse.each do |answer| %>
     <%= render answer %>
   <% end %>
 </div>
