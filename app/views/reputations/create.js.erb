@@ -1,6 +1,7 @@
-let starting = parseInt($("#rep_value<%= @reputatable.id %>").text());
 if ("<%= @reputation.rep_given %>" === 'true') {
-	$('#rep_value<%= @reputatable.id %>').text(5 + starting);
+	let true_start = parseInt($("#rep_value<%= @reputatable.id %>").text());
+	$('#rep_value<%= @reputatable.id %>').text(5 + true_start);
 }else{
-	$('#rep_value<%= @reputatable.id %>').text(starting - 5);
+	let false_start = parseInt($("#rep_value<%= @reputatable.id %>").text());
+	$('#rep_value<%= @reputatable.id %>').text(false_start - 5);
 };

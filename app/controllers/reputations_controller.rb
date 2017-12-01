@@ -10,17 +10,21 @@ class ReputationsController < ApplicationController
   		@rep_user.increment!('reputation', 5)
   		@reputatable.increment!('reputation', 5)
   		@user.increment!('reputation', -2)
+      respond_to do |format|
+        format.js
+      end
   	elsif !Reputation.where(user_id: @user.id, reputatable_id: @reputatable.id, rep_given: false).exists? and @reputation.rep_given == false
 	 		@reputation.save
 	  	@rep_user.increment!('reputation', -5)
 	  	@reputatable.increment!('reputation', -5)
 	  	@user.increment!('reputation', -10)
+      respond_to do |format|
+        format.js
+      end
 	  else
-	  	flash[:alert] = "You've already given rep to this post!"
+      render partial: 'reputations/reputation', locals: {rep_object: @reputatable}
+      flash[:alert] = "You've already given rep to this post!"
 	  end
-  end
-
-  def destroy
   end
 
   def find_reputatable
