@@ -4,6 +4,7 @@
 			<div class="card-content">
 					<%= render @post %>
 			</div>
+			
 			<ul class="comments">
   			<%= render(partial: 'comments/comment', collection: @post.comments) %>	
 			</ul>
