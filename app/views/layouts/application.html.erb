@@ -40,11 +40,12 @@
  	  		<li><%= link_to "View Profile", user_path(current_user) %></li>
 	  		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
 	  		<li class="divider"></li>
+	  			<% if current_user.reputation >= 500 %>
+      			<li><%= link_to "New Blog Post", new_post_path %></li>
+			  		<li class="divider"></li>
+      		<% end %>
 	  		<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-	  		<% if current_user.reputation >= 500 %>
-      		<li><%= link_to "New Blog Post", new_post_path %></li>
-      	<% end %>
-			</ul>
+	  	</ul>
 		<% end %>
 		  
 		</ul>
@@ -67,9 +68,8 @@
 		        </div>
 		        <div class="col s5">
 		          <ul class="right">
+	            	<li><%= link_to "View Blog Posts", posts_path %></li>
 		            <% if user_signed_in? %>
-
-		            	<li><%= link_to "View Blog Posts", posts_path %></li>
  	      					<li> <%= link_to "Ask Question", new_question_path %></li>
 		      				<li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><%= current_user.username %>
 	      						<i class="material-icons right">arrow_drop_down</i></a>

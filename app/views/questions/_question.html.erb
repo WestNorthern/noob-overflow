@@ -1,9 +1,4 @@
-<div class="vote-box card-panel hoverable">
-  <div class="upvote"></div>
-  <div class="rep-value">2</div>
-  <div class="downvote"></div>
-  <div class="star-button"></div>
-</div>
+<%= render partial: 'reputations/reputation', locals: {rep_object: question} %>
 
 <div class="card-content">
   <h4 style="text-align: center;"><%= question.title %></h4>
