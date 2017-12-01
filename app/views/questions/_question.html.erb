@@ -1,6 +1,7 @@
 <%= render partial: 'reputations/reputation', locals: {rep_object: question} %>
 
 <div class="card-content">
+  <span class="card-title">Question from <%= question.user.username %></span>
   <h4 style="text-align: center;"><%= question.title %></h4>
   <br>
   <p><%= markdown(question.content) %></p>

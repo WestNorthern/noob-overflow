@@ -10,6 +10,7 @@ class AnswersController < ApplicationController
   def create
     respond_to do |format|
      @answer = current_user.answers.create(answer_params)
+     current_user.increment!('reputation', 15)
      Pony.mail(:to => @answer.question.user.email, :from => 'NoobOverflow@noob.com',
      :subject => 'Your question has been answered by ' +  @answer.user.username, :body => @answer.content)
      format.js

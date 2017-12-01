@@ -32,3 +32,21 @@
 #email_fail{
 	display: none;
 }
+
+.profile_pic_wrapper {
+	float: left;
+	height: 120px;
+	width: 120px;
+	position: relative;
+
+}
+
+.profile_pic {
+	height: 90%;
+	width: 90%;
+	border-radius: 50%;
+	position: absolute;
+	left: 5%;
+	top: 5%;
+
+}

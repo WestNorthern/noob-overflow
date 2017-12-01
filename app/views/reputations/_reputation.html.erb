@@ -7,25 +7,31 @@
 		</ul>
 	<% end %>
 <% end %>
+
+
 <div class="vote-box card-panel">
-	<!-- checks to see if if is on an index view. can't add reputation on index views -->
+	<!-- checks to see if it is on an index view. can't add reputation on index views -->
 	<% if params[:id] %>
 	
-		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: true).exists? or rep_object.user == current_user %>
+		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: true).exists?  %>
+			<div class="upvote"></div>
+		<% elsif rep_object.user == current_user %>
 			<div class="upvote"></div>
 		<% else %>
 			<%= link_to reputations_path(reputation: {reputatable_id: rep_object.id, user_id: current_user.id, reputatable_type: rep_object.class, rep_given: true}), method: :post, remote: true do %>
-				<div class='upvote hoverable'></div>
+				<div class='upvote'></div>
 			<% end %>
 		<% end %>
 
 		<div class="rep-value" id="rep_value<%= rep_object.id %>"> <%= rep_object.reputation %> </div>
 
-		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: false).exists? or rep_object.user == current_user %>
+		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: false).exists?  %>
+			<div class="downvote"></div>
+		<% elsif rep_object.user == current_user %>
 			<div class="downvote"></div>
 		<% else %>
 			<%= link_to reputations_path(reputation: {reputatable_id: rep_object.id, user_id: current_user.id, reputatable_type: rep_object.class, rep_given: false}), method: :post, remote: true do %>
-				<div class='downvote card hoverable'></div>
+				<div class='downvote'></div>
 			<% end %>
 		<% end %>
 
