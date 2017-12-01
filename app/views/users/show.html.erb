@@ -36,3 +36,34 @@
     </div>
   </div>
 </div>
+
+
+<% if @user.deleted_at.nil? %>
+	<ul class="collapsible" data-collapsible="accordion">
+	  <li>
+	    <div class="collapsible-header">
+	    	<div class="profile_pic_wrapper">
+	    		<%= image_tag @user.avatar.url(:medium), class: "profile_pic" %>
+	    	</div>
+	    	<i class="material-icons">filter_drama</i>
+	    	<%= @user.username %></div>
+	    <div class="collapsible-body">
+	    	<span>
+	    		<% if @user.about? %>
+	    			<%= @user.about %>
+	    		<% else %>
+	    			<p>This person is very mysterious...</p>
+	    		<% end %>
+	    	</span>
+	    </div>
+	  </li>
+	  <li>
+	    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+	    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	  </li>
+	  <li>
+	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+	    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	  </li>
+	</ul>
+<% end %>
