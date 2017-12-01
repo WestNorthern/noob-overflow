@@ -1,11 +1,7 @@
 <div class="post_wrapper">
 	<div class="post_content">
-		<div class="vote-box">
-			<div class="upvote"></div>
-			<div class="rep-value">2</div>
-			<div class="downvote"></div>
-			<div class="star-button"></div>
-		</div>
+		
+		<%= render partial: 'reputations/reputation', locals: {rep_object: post} %>
 
 		<p style="text-align: center; font-size: 2em; "> <%= post.title %> </p>
 		<% if local_assigns[:full] %>

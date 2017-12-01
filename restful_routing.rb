@@ -18,6 +18,7 @@ cancel_user_registration GET    /users/cancel(.:format)                         
              check_email POST   /check_email(.:format)                              users/registrations#check_email
                    users GET    /users(.:format)                                    users#index
                     user GET    /users/:id(.:format)                                users#show
+             reputations POST   /reputations(.:format)                              reputations#create
          answer_comments GET    /answers/:answer_id/comments(.:format)              comments#index
                          POST   /answers/:answer_id/comments(.:format)              comments#create
       new_answer_comment GET    /answers/:answer_id/comments/new(.:format)          comments#new
@@ -42,6 +43,8 @@ cancel_user_registration GET    /users/cancel(.:format)                         
                          PATCH  /posts/:post_id/comments/:id(.:format)              comments#update
                          PUT    /posts/:post_id/comments/:id(.:format)              comments#update
                          DELETE /posts/:post_id/comments/:id(.:format)              comments#destroy
+       post_positive_rep POST   /posts/:post_id/positive_rep(.:format)              posts#positive_rep
+       post_negative_rep POST   /posts/:post_id/negative_rep(.:format)              posts#negative_rep
                    posts GET    /posts(.:format)                                    posts#index
                          POST   /posts(.:format)                                    posts#create
                 new_post GET    /posts/new(.:format)                                posts#new

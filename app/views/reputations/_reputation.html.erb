@@ -1,0 +1,40 @@
+<% if @reputation %>
+	<% if @reputation.errors.full_messages.any? %>
+	<ul>
+		<% @reputation.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul>
+<% end %>
+<% end %>
+<div class="vote-box">
+	<!-- checks to see if if is on an index view. can't add reputation on index views -->
+	<% if params[:id] %>
+	
+		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: true).exists? %>
+			<div class="upvote"></div>
+		<% else %>
+			<%= link_to reputations_path(reputation: {reputatable_id: rep_object.id, user_id: current_user.id, reputatable_type: rep_object.class, rep_given: true}), method: :post, remote: true do %>
+				<div class='upvote'></div>
+			<% end %>
+		<% end %>
+
+		<div class="rep-value" id="rep_value<%= rep_object.id %>"><%= rep_object.reputation %></div>
+
+		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: false).exists? %>
+			<div class="downvote"></div>
+		<% else %>
+			<%= link_to reputations_path(reputation: {reputatable_id: rep_object.id, user_id: current_user.id, reputatable_type: rep_object.class, rep_given: false}), method: :post, remote: true do %>
+				<div class='downvote'></div>
+			<% end %>
+		<% end %>
+		<div class="star-button"></div>
+
+	<% else %>
+
+		<div class="rep-value"><%= rep_object.reputation %></div>
+		<div class="star-button"></div>
+
+	<% end %>
+
+</div>

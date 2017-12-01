@@ -6,3 +6,4 @@ $('.best_in_place').best_in_place()
 $(document).on 'turbolinks:load', ->
 	$('.post_delete').on 'ajax:success', ->
 		$(this).closest('.card-content').remove()
+
