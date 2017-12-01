@@ -1,18 +1,34 @@
-
-
-<% if answer.user.id == current_user.id %>
-	<%= link_to "X", answer, method: :delete, remote: true, class: 'answer_delete waves-effect waves-light chip close right'%>
-<% end %>
-<span class="card-title">Answer from <%= answer.user.username %></span>
-<div class="card-content">
-	<% if local_assigns[:full] %>
-		<%= truncate(markdown(answer.content), length: 90, escape: false) %>
-	<% else %>
-		<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :display_with => proc { |v| markdown(v)}, :type => :textarea %>
-	<% end %>
+<div class="row answer_wrapper answer_show">
+  <div class="col s10 offset-s1">
+    <div class="card hoverable">
+      <div class="card-content">
+				<% if answer.user.id == current_user.id %>
+					<%= link_to "X", answer, method: :delete, remote: true, class: 'answer_delete waves-effect waves-light chip close right'%>
+				<% end %>
+				<span class="card-title">Answer from <%= answer.user.username %></span>
+				<div class="card-content">
+					<% if local_assigns[:full] %>
+						<%= truncate(markdown(answer.content), length: 90, escape: false) %>
+					<% else %>
+						<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :display_with => proc { |v| markdown(v)}, :type => :textarea %>
+					<% end %>
+				<small class="col s12 m8">
+					Submitted <%= time_ago_in_words(answer.created_at) %> ago
+				</small>
+				</div>
+				<hr>
+				<ul class="comments">
+				  <%= render(partial: 'comments/comment', collection: answer.comments) %>  
+				</ul>
+				<div class="row card-panel grey lighten-3">
+				  <%= form_for [answer, Comment.new], scope: 'comment', remote: true, class: "comment-field" do |f| %>
+				    <%= f.hidden_field :user_id, value: current_user.id %>
+				    <%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
+				    <%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
+				  <% end %>
+				</div>
+			</div>
+    </div>
+  </div>
 </div>
-<hr>
-<small class="col s12 m8">
-	Submitted <%= time_ago_in_words(answer.created_at) %> ago
-</small>
 
