@@ -1,18 +1,5 @@
 // $('.answer_wrapper').prepend(" <%= j render @answer %>");
-$('.new_answer').prepend(
-
-	`<div class="row answer_wrapper">
-	  <div class="col s10 offset-s1">
-	    <div class="card hoverable">
-	      <div class="card-content">
-	          <%= j render @answer %>
-	      </div>
-	    </div>
-	  </div>
-	</div>`
-);
-
-
+$('.answers').prepend("<%= j render @answer %>");
 $('.answer_form').trigger('reset');
 
 
