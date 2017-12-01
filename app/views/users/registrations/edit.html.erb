@@ -75,9 +75,12 @@
 
       <h3>Delete my account</h3>
 
-      <%= link_to 'Delete Account <i class="tiny material-icons">delete</i>'.html_safe, registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'waves-effect waves-light btn red accent-4' %>
+      <%= link_to 'Delete Account <i class="tiny material-icons left">delete</i>'.html_safe, registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'waves-effect waves-light btn red accent-4' %>
         <br>
-      <%= link_to "Back", :back %>
+        <br>
+        <hr>
+        <br>
+      <%= link_to "Back", :back, class: "waves-effect waves-light btn" %>
     </div>
   </div>
 </div>

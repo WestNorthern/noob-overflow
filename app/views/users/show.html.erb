@@ -1,52 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col s9 offset-s2">
-			<div id="user_wrapper" class="card blue-grey lighten-5">
-				<!-- checks if the account has been soft deleted -->
-				<% if @user.deleted_at.nil? %>
-			
-					<div class="name_photo">
-						<h3><%= @user.username %></h3>
-						<% if @user.avatar? %>
-							<%= image_tag @user.avatar.url(:medium) %>
-						<% end %>
-					</div>
-					<div class="badges">
-						<!-- if we get here -->
-					</div>
-					<div class="aboot">
-						<ul>
-							<li>Questions Asked: <%= @user.questions.count  %></li>
-							<li>Answers Given: <%= @user.answers.count  %></li>
-							<li>Comments Made: <%= @user.comments.count  %></li>
-							<li>Current Reputation: <%= @user.reputation %></li>
-
-						</ul>
-							<% if @user.about? %>
-								<p> <b>About <%= @user.username %>:</b> <br>
-									<%= @user.about %>
-								</p>
-							<% end %>
-					</div>
-				<% else %>
-					<h3 class='user_has_deleted red-text'><%= @user.username %> has deleted their account</h3>
-				<% end %>
-
-			</div>
-    </div>
-  </div>
-</div>
-
-
 <% if @user.deleted_at.nil? %>
-	<ul class="collapsible" data-collapsible="accordion">
+
+	<ul class="collapsible col s8 offset-s2 hoverable" data-collapsible="accordion">
 	  <li>
 	    <div class="collapsible-header">
 	    	<div class="profile_pic_wrapper">
 	    		<%= image_tag @user.avatar.url(:medium), class: "profile_pic" %>
 	    	</div>
-	    	<i class="material-icons">filter_drama</i>
-	    	<%= @user.username %></div>
+	    	
+	    	<div>
+		    	<h5> <i class="material-icons left">filter_drama</i>	<%= @user.username %> </h5>
+		    	Reputation: <%= @user.reputation %>
+		    	<br>
+		    	<% if @user.reputation < 20 %>
+		    		<p>Rank: n00b</p>
+		    	<% elsif @user.reputation < 200 %>
+		    		<p>Rank: pl3b</p>
+		    	<% elsif @user.reputation < 600 %>
+		    		<p>Rank: h@x0r</p>
+		    	<% elsif @user.reputation < 900 %>
+		    		<p>Rank: 1337</p>
+		    	<% elsif @user.reputation < 1200 %>
+		    		<p>Rank: codebae</p>
+		    	<% elsif @user.reputation > 5000 %>
+		    		<p>Rank: ninj@</p>
+
+		    	<% end %>
+	    	</div>
+	    	
+
+	    </div>
+	    	
 	    <div class="collapsible-body">
 	    	<span>
 	    		<% if @user.about? %>
@@ -58,12 +41,44 @@
 	    </div>
 	  </li>
 	  <li>
-	    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-	    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	    <div class="collapsible-header"><i class="material-icons">grade</i>Stats</div>
+	    <div class="collapsible-body">
+	    	<span>
+	    		<ul>
+						<li><i class="material-icons left">hot_tub</i> Questions Asked: <%= @user.questions.count  %></li>
+						<br>
+						<li><i class="material-icons left">healing</i> Answers Given: <%= @user.answers.count  %></li>
+						<br>
+						<li><i class="material-icons left">highlight</i> Comments Made: <%= @user.comments.count  %></li>
+						<br>
+						<li><i class="material-icons left">landscape</i> Current Reputation: <%= @user.reputation %></li>
+					</ul>	
+		    </span>
+		  </div>
 	  </li>
 	  <li>
-	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-	    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Trophies</div>
+	    <div class="collapsible-body">
+	    	<span>
+	    		<% if @user %>
+	    		<% else %>
+	    			<h1>Ya Got Nothin'</h1>
+	    		<% end %>
+
+	    	</span>
+	    </div>
 	  </li>
 	</ul>
+
+	<% if @user.id == current_user.id %>
+		<%= link_to "<i class='material-icons right'>edit</i>Edit Profile".html_safe, edit_user_registration_path, class: 'waves-effect waves-light btn' %>
+	<% end %>
+
+<% else %>
+	<h3 class='user_has_deleted red-text'><%= @user.username %> has deleted their account</h3>
 <% end %>
+
+
+<script>
+	$('.collapsible').collapsible();
+</script>

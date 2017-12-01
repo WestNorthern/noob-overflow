@@ -1,4 +1,4 @@
-<div class="row answer_wrapper answer_show">
+<div class="row answer_wrapper answer_show" data-id="<%= answer.id %>">
   <div class="col s10 offset-s1">
     <div class="card hoverable">
 
@@ -17,6 +17,12 @@
 					<% else %>
 						<% if user_signed_in? %>
 							<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :display_with => proc { |v| markdown(v)}, :type => :textarea %>
+						   <% answer.tag_list.each do |tag| %>
+								<div class="chip">
+									<%= tag %>
+							    <i class="close material-icons close_tag" data-answer-id="<%= answer.id%>">close</i>
+							  </div>
+						  <% end %>
 						<% end %>
 					<% end %>
 				<small class="col s12 m8">
