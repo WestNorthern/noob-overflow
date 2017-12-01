@@ -7,8 +7,10 @@
 		</ul>
 	<% end %>
 <% end %>
+
+
 <div class="vote-box card-panel">
-	<!-- checks to see if if is on an index view. can't add reputation on index views -->
+	<!-- checks to see if it is on an index view. can't add reputation on index views -->
 	<% if params[:id] %>
 	
 		<% if Reputation.where(user_id: current_user.id, reputatable_id: rep_object.id, rep_given: true).exists? or rep_object.user == current_user %>
