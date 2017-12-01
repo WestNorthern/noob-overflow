@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130221851) do
+ActiveRecord::Schema.define(version: 20171201014713) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "question_id"
     t.text "content"
-    t.integer "reputation"
+    t.integer "reputation", default: 0
     t.boolean "chosen", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -129,6 +129,11 @@ ActiveRecord::Schema.define(version: 20171130221851) do
     t.datetime "updated_at", null: false
     t.index ["reputatable_type", "reputatable_id"], name: "index_reputations_on_reputatable_type_and_reputatable_id"
     t.index ["user_id"], name: "index_reputations_on_user_id"
+  end
+
+  create_table "sashes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade do |t|
