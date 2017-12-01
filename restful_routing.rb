@@ -16,6 +16,7 @@ cancel_user_registration GET    /users/cancel(.:format)                         
                          POST   /users(.:format)                                    users/registrations#create
           check_username POST   /check_username(.:format)                           users/registrations#check_username
              check_email POST   /check_email(.:format)                              users/registrations#check_email
+                    tags DELETE /tags(.:format)                                     tags#destroy
                    users GET    /users(.:format)                                    users#index
                     user GET    /users/:id(.:format)                                users#show
              reputations POST   /reputations(.:format)                              reputations#create

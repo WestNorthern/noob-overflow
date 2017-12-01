@@ -8,7 +8,6 @@ class AnswersController < ApplicationController
   end
 
   def create
-    
     respond_to do |format|
      @answer = current_user.answers.create(answer_params)
      Pony.mail(:to => @answer.question.user.email, :from => 'NoobOverflow@noob.com',
@@ -47,7 +46,7 @@ class AnswersController < ApplicationController
   private 
   
   def answer_params
-    params.require(:answer).permit(:content, :question_id)
+    params.require(:answer).permit(:content, :question_id, :tag_list)
   end
 end
 
