@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
 
 	resources :users, only: [:index, :show] 
+
+  resources :reputations, only: [:create]
   
   resources :answers do
   	resources :comments
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
   
   resources :posts do
   	resources :comments
+    post "/positive_rep", to: 'posts#positive_rep'
+    post "/negative_rep", to: 'posts#negative_rep'
   end
 
   resources :comments do
