@@ -1,4 +1,28 @@
-<div class="row">
+<% if current_user %>
+	<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"></div>
+      <div class="collapsible-body" style="text-align: center;">
+      	<span>
+	      	New to Noob Overflow? Take our tutorial to learn about participating in this exciting community for noobs and earn your first badge!
+
+					<br>
+					<br>
+					<br>
+		      <a class="waves-effect waves-light btn red">
+		      	<i class="material-icons left">flare</i> Start Tutorial!<br>
+		      </a>
+			  </span>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"></div>
+    </li>
+  </ul>
+<% end %>
+
+
+
 <ul id="tabs-swipe-demo" class="tabs">
   <li class="tab col s3"><a href="#test-swipe-1">Recently Asked</a></li>
   <li class="tab col s3"><a class="active" href="#test-swipe-2">Most Popular</a></li>
@@ -65,4 +89,10 @@
 	<% end %>
 
 </div>
-</div>
+
+
+
+<script>
+	
+	$('.collapsible').collapsible();
+</script>
