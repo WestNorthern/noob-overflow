@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 	devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   resources :questions do
   	resources :comments
   end
+  
+  get 'search/index'
 
  	root 'questions#index' 
 
