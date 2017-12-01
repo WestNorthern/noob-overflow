@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
+    current_user.increment!('reputation', 25) #gives user 25 pts for making a new blog post
     redirect_to @post
   end
 

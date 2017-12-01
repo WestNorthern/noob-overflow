@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171201172433) do
 
-
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "question_id"
