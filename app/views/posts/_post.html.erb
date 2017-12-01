@@ -3,14 +3,31 @@
 		
 		<%= render partial: 'reputations/reputation', locals: {rep_object: post} %>
 
-		<p style="text-align: center; font-size: 2em; "> <%= post.title %> </p>
 		<% if local_assigns[:full] %>
-			<%= truncate(markdown(post.content), length: 90, escape: false) %>
+		<% else %>
+			<div style="float: right;">
+			  <% if post.user.id == current_user.id %>
+			    <%= link_to "Edit Post", edit_post_path(post) %>
+			    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete' %>
+			  <% end %>
+		  </div>
+		<% end %>
+
+		<p style="text-align: center; font-size: 2em;"> 
+			<%= post.title %> 
+		</p>
+		<p>
+		<% if local_assigns[:full] %>
+			<div class="truncate"> 
+				<%= markdown(post.content) %>
+			</div>
 		<% else %>
 			<%= markdown(post.content) %>
 		<% end %>
-		<div>
-			<small>
+		</p>
+		<br>
+		<div class="row">
+			<small class="col s3 offset-s9">
 				Posted by:
 				<% if params[:id].nil? %>
 					<% if post.user.deleted_at.nil? %>
@@ -29,14 +46,5 @@
 				<%= post.created_at.strftime("at %I:%M%p") %>
 			</small>
 		</div>
-	</div>
-	<div>
-		<% if params[:id].nil? %>
-		  <%= link_to "Full Post", post %>
-		<% end %>	
-	  <% if post.user.id == current_user.id %>
-	    <%= link_to "Edit Post", edit_post_path(post)  %>
-	    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete'%>
-	  <% end %>	
 	</div>
 </div>

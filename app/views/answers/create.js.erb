@@ -1,2 +1,5 @@
-$('.answer_wrapper').prepend(" <%= j render @answer %>");
+// $('.answer_wrapper').prepend(" <%= j render @answer %>");
+$('.answers').prepend("<%= j render @answer %>");
 $('.answer_form').trigger('reset');
+
+

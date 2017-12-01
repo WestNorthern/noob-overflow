@@ -53,6 +53,7 @@ before_action :find_commentable
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
     @commentable = Post.find_by_id(params[:post_id]) if params[:post_id]
     @commentable = Question.find_by_id(params[:question_id]) if params[:question_id]
+    @commentable = Answer.find_by_id(params[:answer_id]) if params[:answer_id]
   end
 
 end

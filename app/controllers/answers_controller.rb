@@ -8,10 +8,11 @@ class AnswersController < ApplicationController
   end
 
   def create
-
+    
     respond_to do |format|
      @answer = current_user.answers.create(answer_params)
-     Pony.mail(:to => @answer.question.user.email, :from => 'NoobOverflow@noob.com', :subject => 'Question has been answered', :body => 'Hello there. Your question has been answered. Go check it out')
+     Pony.mail(:to => @answer.question.user.email, :from => 'NoobOverflow@noob.com',
+     :subject => 'Your question has been answered by ' +  @answer.user.username, :body => @answer.content)
      format.js
     end
   end

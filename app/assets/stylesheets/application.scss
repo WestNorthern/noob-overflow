@@ -25,7 +25,7 @@
 }
 
 body {
-	background: #ede7f6;
+	background: #f3e5f5;
 }
 
 pre {
@@ -36,12 +36,11 @@ pre {
 }
 
 .vote-box {
-	position: relative;
-	top: 3%;
-	left: 3%;
-	background: aliceblue;
+	position: absolute;
+	top: 20%;
+	left: -7%;
 	width: 50px;
-	height: 140px;
+	height: 130px;
 	border-radius: 3px;
 	border: 2px solid black;
 }
