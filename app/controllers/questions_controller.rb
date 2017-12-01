@@ -24,6 +24,7 @@ class QuestionsController < ApplicationController
   def create
     @user = current_user
     @question = @user.questions.create(question_params)
+    @user.increment!('reputation', 5)
     redirect_to @question
   end
 
