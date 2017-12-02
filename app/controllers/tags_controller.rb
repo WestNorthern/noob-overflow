@@ -20,8 +20,10 @@ class TagsController < ApplicationController
   def destroy 
     @answer = Answer.find(params[:id])
     @answer.tag_list.remove(params[:tag_name])
+    @question = Question.find(params[:id])
+    @question.tag_list.remove(params[:tag_name])
+    @question.save
     @answer.save
-    p params[:tag_name]
 
     # respond_to do |format| #we are expecting a certain call
     #   @tag = ActsAsTaggableOn::Tag.find(params[:id]).destroy

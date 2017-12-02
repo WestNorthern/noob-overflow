@@ -3,6 +3,7 @@
 			<%= form_with model: @question, id: "new-question" do |f| %>
 				<%= f.text_field :title, placeholder: 'Title', class: "title" %>
 				<%= f.text_area :content, placeholder: 'Content', class: 'content' %>
+				<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'Tags' %>
 				<%= f.submit %>
 			<% end %>
 		</div>
