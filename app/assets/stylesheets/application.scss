@@ -14,8 +14,102 @@
  *= require_self
  */
 
+
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+$grape: #94618E;
+$eggplant: #49274A;
+$sand: #F4DECB;
+$shell: #F8EEE7;
+
+$stormy: #494E6B;
+$cloud: #98878F;
+$sunset: #985E6D;
+$evening: #192231;
+
+$rust: #B56357;
+$mint: #B4DBC0;
+$slate: #EAE3EA;
+$seafoam: #A7B3A5;
+
+
+// $navbar-color: $eggplant;
+// $navbar-text: $sand;
+// $accent-color: $grape;
+// $content-color: $shell;
+// $background-color: $sand;
+// $button-color: $grape;
+
+
+// $navbar-color: $mint;
+// $navbar-text: $rust;
+// $accent-color: $slate;
+// $content-color: $slate;
+// $background-color: $seafoam;
+// $button-color: $rust;
+
+$navbar-color: $mint;
+$navbar-text: $rust;
+$accent-color: $slate;
+$content-color: $slate;
+$background-color: $seafoam;
+$button-color: $rust;
+
+nav{
+	li {
+		a {
+		color: $navbar-text !important;
+	  }
+	}
+}
+
+.btn{
+  background-color: $button-color;
+}
+.btn:visited{
+  background-color: $button-color;
+}
+.btn:hover {
+  background-color: $rust;
+}
+.btn:active {
+  background-color: $slate;
+}
+.btn:focus{ 
+  background: $rust;
+}
+
+.card {
+	background-color: $content-color;
+}
+
+.nav-color {
+	background: $navbar-color;
+}
+
+input[id="search"] {
+	height: 40px !important; 
+	margin-top: 10px;
+	border-radius: 10px !important;
+	cursor: pointer;
+}
+.search-input{
+	background-color: $accent-color;
+	height: 40px !important; 
+	margin-top: 10px;
+	border-radius: 10px;
+	width: 60% !important;
+}
+nav .input-field label {
+	top: -23px;
+	left: 0;
+	cursor: pointer;
+}
+
+.user-hub {
+	width: 100%;
+}
 
 .account{
 	textarea{
@@ -25,7 +119,7 @@
 }
 
 body {
-	background: #f3e5f5;
+	background: $background-color;
 }
 
 pre {
