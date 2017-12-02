@@ -21,5 +21,11 @@
     <a href="#"> <%= link_to "Edit Question", edit_question_path(question) %> </a>
     <a href="#"> <%= link_to 'Destroy',  question,  method: :delete, data: { confirm: 'Are you sure?' } %> </a>
   <% end %>
+  <% question.tag_list.each do |tag| %>
+    <div class="chip">
+      <%= tag %>
+      <i class="close material-icons close_tag" data-question-id="<%= question.id%>">close</i>
+    </div>
+  <% end %>
 </div>
 

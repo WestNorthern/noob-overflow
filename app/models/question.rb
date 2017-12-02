@@ -1,6 +1,7 @@
 class Question < ApplicationRecord
 	belongs_to :user
-	
+	acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :tags
 	def user
   	User.unscoped { super }
 	end
