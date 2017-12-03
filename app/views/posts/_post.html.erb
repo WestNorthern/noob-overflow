@@ -47,4 +47,10 @@
 			</small>
 		</div>
 	</div>
+	 <% post.tag_list.each do |tag| %>
+    <div class="chip">
+      <%= tag %>
+      <i class="close material-icons close_post_tag" data-post-id="<%= post.id%>">close</i>
+    </div>
+  <% end %>
 </div>
