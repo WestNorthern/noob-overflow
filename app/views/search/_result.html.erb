@@ -1,0 +1,31 @@
+<div class="result card">
+	<% if result.class.to_s == 'Answer' %>
+		<div class="result_rep">
+			<b><%= result.reputation %> Rep |</b>
+		</div>
+		<div class="result_content">
+			<%= result.content.truncate_words(25) %>
+		</div> <br>
+		<div class="result_tags">
+			Matching Tags: <% result.tags.each do |tag| %>
+				<% if @search.include?(tag.name) %>
+					"<%= tag %>"
+				<% end %>
+			<% end %>
+		</div>
+	<% else %>
+		<div class="result_rep">
+			<b><%= result.reputation %> Rep |</b>
+		</div>
+		<div class="result_content">
+			<%= result.content.truncate_words(25) %>
+		</div><br>
+		<div class="result_tags">
+			Matching Tags: <% result.tags.each do |tag| %>
+				<% if @search.include?(tag.name) %>
+					"<%= tag %>"
+				<% end %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

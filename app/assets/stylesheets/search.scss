@@ -4,5 +4,13 @@
 .result-header{
 	text-align: center;
 	width: 90%;
-	margin-left: 20%;
+}
+
+.result{
+	width: 90%;
+	height: auto;
+	padding-left: 1%;
+	div {
+		display: inline-block;
+	}
 }

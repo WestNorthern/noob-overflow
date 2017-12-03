@@ -32,7 +32,7 @@
 	<h1>Recently Asked Questions</h1>
 
 
-	<% @questions.each do |question| %>
+	<% @questions.order(created_at: :desc).each do |question| %>
 		<div class="questions">
 			<div class="row question">
 				<%= link_to question do %>
@@ -52,7 +52,7 @@
 	<h1>Most Popular Questions</h1>
 
 
-	<% @questions.each do |question| %>
+	<% @questions.order(reputation: :desc).each do |question| %>
 		<div class="questions">
 			<div class="row question">
 				<%= link_to question do %>
@@ -74,7 +74,7 @@
 	<h1>Dumbest Questions</h1>
 
 
-	<% @questions.each do |question| %>
+	<% @questions.where('reputation < 0').order(reputation: :asc).each do |question| %>
 		<div class="questions">
 			<div class="row question">
 				<%= link_to question do %>

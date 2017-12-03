@@ -8,14 +8,17 @@
 			<ul class="comments">
   			<%= render(partial: 'comments/comment', collection: @post.comments) %>	
 			</ul>
-			<div class="row card-panel grey lighten-3">
-      	<%= form_for [@post, Comment.new], scope: 'comment', remote: true, class: "comment-field" do |f| %>
-      		<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
-      		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
-					
-				<% end %>
-			</div>
+			<% if user_signed_in? %>
+				
+				<div class="row card-panel grey lighten-3">
+	      	<%= form_for [@post, Comment.new], scope: 'comment', remote: true, class: "comment-field" do |f| %>
+	      		<%= f.hidden_field :user_id, value: @user.id %>
+						<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
+	      		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
+					<% end %>
+				</div>
+				
+			<% end %>
 		</div>
 	</div>
 </div>
