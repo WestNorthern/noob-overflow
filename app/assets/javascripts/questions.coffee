@@ -9,4 +9,4 @@ $(document).on 'turbolinks:load', ->
 		$.ajax
 			type: "DELETE"
 			url: "/tags"
-			data: {id: question_id, tag_name: tag_text}
+			data: {id: question_id, tag_name: tag_text, type: "question"}
