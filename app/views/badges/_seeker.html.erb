@@ -1,0 +1,17 @@
+<div id="seeker-modal" class="modal">
+  <div class="modal-content">
+    <h4>The Seeker</h4>
+    <p>
+    	Heard you been round these parts a lot lately. Heard you've been asking a lot of questions... <br>
+    	That is great! Questions are the life-blood of this community, and it looks like you are using your big ol' heart to pump them in. Keep at it!
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Oh, really?", badge_path(current_user.id, 'seeker'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

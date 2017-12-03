@@ -1,0 +1,16 @@
+<div id="mastermind-modal" class="modal">
+  <div class="modal-content">
+    <h4>_\| Mastermind |/_</h4>
+    <p> 
+    	You have cleared the gauntlet! You have so much standing in the community that we are relying on you to take users' dire questions and give them the WHOLE answer. It is up to you, Mastermind!
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Um...Okay!", badge_path(current_user.id, 'mastermind'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

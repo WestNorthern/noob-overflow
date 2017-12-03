@@ -1,0 +1,16 @@
+<div id="extrovert-modal" class="modal">
+  <div class="modal-content">
+    <h4>Extrovert!</h4>
+    <p>
+    	You may have noticed that your peers are a little shy compared to you. While they are thoughtfully composing meaningful comments, you just let it fuckin' rip. You are a rare bird: the extrovert coder. Relish in that, and accept this trophy as your reward.
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "I'm Awesome", badge_path(current_user.id, 'extrovert'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

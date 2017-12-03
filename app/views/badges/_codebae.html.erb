@@ -1,0 +1,16 @@
+<div id="codebae-modal" class="modal">
+  <div class="modal-content">
+    <h4>You are the Code Bae ...</h4>
+    <p>
+    	Your attention to detail and loving answers have earned you the badge of the Code Bae. Basic coders will flock to you, like salmon to the Capistrano. In your presence, answers flow like wine and noobs long to put their hands into the holes of your sweater.
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Yas Queen", badge_path(current_user.id, 'codebae'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

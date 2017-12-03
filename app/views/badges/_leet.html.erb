@@ -1,0 +1,16 @@
+<div id="leet-modal" class="modal">
+  <div class="modal-content">
+    <h4>1337</h4>
+    <p>
+    	You are the elite! Though we would never use that word in this community. We would simply refer to you as: 1337. Keep it up!
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "2leg!t2qu!t", badge_path(current_user.id, 'leet'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

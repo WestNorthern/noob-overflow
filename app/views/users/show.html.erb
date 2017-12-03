@@ -22,7 +22,7 @@
 
 			<%= render 'badges/noob'  %>
 
-		 	<a class="waves-effect waves-light btn modal-trigger" href="#noob-modal">New Trophy!</a>
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#noob-modal">Noob Trophy!</a>
 
 		<% end %>
 
@@ -30,8 +30,73 @@
 
 				<%= render 'badges/dunce'  %>
 
-		 	<a class="waves-effect waves-light btn modal-trigger" href="#dunce-modal">New Trophy!</a>
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#dunce-modal">Dunce Trophy?</a>
 		<% end %>
+
+		<% if @user.reputation >= 200 && @user.badge.pleb == false %>  
+
+				<%= render 'badges/pleb'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#pleb-modal">Pleb Trophy!</a>
+		<% end %>
+
+
+		<% if @user.reputation >= 600 && @user.badge.hacker == false %>  
+
+				<%= render 'badges/hacker'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#hacker-modal">Hacker Trophy!</a>
+		<% end %>
+
+
+		<% if @user.reputation >= 900 && @user.badge.leet == false %>  
+
+				<%= render 'badges/leet'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#leet-modal">1337 Trophy!</a>
+		<% end %>
+
+
+		<% if @user.reputation >= 1200 && @user.badge.codebae == false %>  
+
+				<%= render 'badges/codebae'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#codebae-modal">Codebae Trophy!</a>
+		<% end %>
+
+
+		<% if @user.reputation >= 5000 && @user.badge.ninja == false %>  
+
+				<%= render 'badges/ninja'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#ninja-modal">Ninja Trophy!</a>
+		<% end %>
+
+
+		<% if @user.answers.count >= 30 && @user.badge.helpful == false %>  
+
+				<%= render 'badges/helpful'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#helpful-modal">Helpful Trophy!</a>
+		<% end %>
+
+
+		<% if @user.questions.count >= 10 && @user.badge.seeker == false %>  
+
+				<%= render 'badges/seeker'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#seeker-modal">Seeker Trophy!</a>
+		<% end %>
+
+
+
+		<% if @user.posts.count > 10 && @user.badge.mastermind == false %>  
+
+				<%= render 'badges/mastermind'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#mastermind-modal">Mastermind Trophy!</a>
+		<% end %>
+
 	<% end %>
 
 	<ul class="collapsible col s8 offset-s2 hoverable" data-collapsible="accordion">
@@ -126,5 +191,5 @@
   $('.modal').modal();
 
   $('.tap-target').tapTarget('open');
-  
+
 </script>
