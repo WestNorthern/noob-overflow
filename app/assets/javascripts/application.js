@@ -20,4 +20,5 @@
 //= require materialize
 //= require_tree .
 
+$('textarea').click('class', 'content card hoverable');
 
