@@ -1,0 +1,16 @@
+<div id="hacker-modal" class="modal">
+  <div class="modal-content">
+    <h4>h@xor ... ~</h4>
+    <p>
+    	You have been seeking to answer questions with the intensity of a zealot. You dream in ones and zeroes. You are, the h@x0r. Take this trophy and hack on, h@x0r. You just hack right on....
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "let i = /'awesome'/g", badge_path(current_user.id, 'hacker'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

@@ -1,0 +1,71 @@
+<h1>Welcome to Noob Overflow!</h1>
+
+<h4>We are going to take you through the way our community works. Follow along and we will teach you how to be cool. If you make it to the end, we will give you a trophy!</h4>
+
+<div class="row">
+	<div class="longcard card hoverable">
+	
+	</div>
+</div>
+
+
+
+<div class="thingy"></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+<% if current_user.badge == nil %>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Now You're In!</h4>
+    <p>Now we will go check out your profile.</p>
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Yay!", badges_path(current_user.id), class: "waves-effect waves-light btn", method: :post %>
+  </div>
+</div>
+<% else %>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Congratulations!</h4>
+    <p>You did the tutorial again!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" id="init" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    
+  </div>
+</div>
+<% end %>
+
+
+
+
+
+<script>
+	$(document).ready(function(){
+		$('.modal').modal();
+		var options = [
+	    {selector: '.thingy', offset: 0, callback: function(el) {
+	      $('#modal1').modal('open');
+	    } },
+  ];
+
+  Materialize.scrollFire(options);
+
+
+
+	});
+
+
+</script>

@@ -13,6 +13,7 @@ before_action :find_commentable
     @user = current_user
     @post = @commentable
     @user.increment!('reputation', 1)
+    
     respond_to do |format|
       @comment = @commentable.comments.create comment_params     
       format.js

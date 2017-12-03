@@ -1,0 +1,16 @@
+<div id="ninja-modal" class="modal">
+  <div class="modal-content">
+    <h4>成果</h4>
+    <p> 
+    	あなたは忍者です。我々は十分に言った。
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "はい", badge_path(current_user.id, 'ninja'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

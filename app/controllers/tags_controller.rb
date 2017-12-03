@@ -18,17 +18,20 @@ class TagsController < ApplicationController
   end
 
   def destroy 
-    @answer = Answer.find(params[:id])
-    @answer.tag_list.remove(params[:tag_name])
-    @answer.save
 
-    @question = Question.find(params[:id])
-    @question.tag_list.remove(params[:tag_name])
-    @question.save
-
-    @post = Post.find(params[:id])
-    @post.tag_list.remove(params[:tag_name])
-    @post.save
+    puts "These are the params:"
+    p params
+    if params[:type] == "question"
+      @question = Question.find(params[:id])
+      @question.tag_list.remove(params[:tag_name])
+      @question.save
+    end
+    if params[:type] == "answer"
+      @answer = Answer.find(params[:id])
+      @answer.tag_list.remove(params[:tag_name])
+      @answer.save
+    end
+    
     # respond_to do |format| #we are expecting a certain call
     #   @tag = ActsAsTaggableOn::Tag.find(params[:id]).destroy
     #   format.js

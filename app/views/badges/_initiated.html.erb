@@ -1,0 +1,13 @@
+<div id="initiated-modal" class="modal">
+  <div class="modal-content">
+    <h4>Congratulations!</h4>
+    <p>You have won your first trophy!</p>
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Yay!", badge_path(current_user.id, 'initiated'), class: "waves-effect waves-light btn", method: :patch %>
+  </div>
+</div>
+
+<script>
+	$('.modal').modal();
+</script>

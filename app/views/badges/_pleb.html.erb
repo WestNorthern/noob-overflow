@@ -1,0 +1,16 @@
+<div id="pleb-modal" class="modal">
+  <div class="modal-content">
+    <h4>pl3b</h4>
+    <p>
+    	We know that you can feel disparaged as a new coder, but you are on your way and that is what matters! When people call you a pl3b, consider it an honor. You have infinite learning ahead of you, but you also have a lot of learning behind you. This will be true for the rest of your coding journey.
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Thereby I Go", badge_path(current_user.id, 'pleb'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

@@ -1,0 +1,16 @@
+<div id="helpful-modal" class="modal">
+  <div class="modal-content">
+    <h4>Helpful!</h4>
+    <p>
+    	You are doing your damn part in spades. Finding those who need assistance, and storming givin' it to them! Keep on being helpful like this, and you can expect tons of trophies to follow.
+    </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Um...Okay!", badge_path(current_user.id, 'helpful'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

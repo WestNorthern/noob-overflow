@@ -17,9 +17,10 @@
 					<% else %>
 						<% if user_signed_in? %>
 							<%= best_in_place_if answer.user.id == current_user.id, answer, :content, :display_with => proc { |v| markdown(v)}, :type => :textarea %>
-						   <% answer.tag_list.each do |tag| %>
+						  <% answer.tag_list.each do |tag| %>
 								<div class="chip">
 									<%= tag %>
+
       						<% if answer.user == current_user %>
         						<i class="close material-icons close_question_tag" data-question-id="<%= answer.id%>">close</i>
     						  <% end %>
