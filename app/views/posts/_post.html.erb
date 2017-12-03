@@ -5,12 +5,16 @@
 
 		<% if local_assigns[:full] %>
 		<% else %>
-			<div style="float: right;">
-			  <% if post.user.id == current_user.id %>
-			    <%= link_to "Edit Post", edit_post_path(post) %>
-			    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete' %>
-			  <% end %>
-		  </div>
+			
+			<% if user_signed_in? %>
+				<div style="float: right;">
+				  <% if post.user.id == current_user.id %>
+				    <%= link_to "Edit Post", edit_post_path(post) %>
+				    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete' %>
+				  <% end %>
+			  </div>
+		  <% end %>
+		  
 		<% end %>
 
 		<p style="text-align: center; font-size: 2em;"> 
@@ -47,4 +51,14 @@
 			</small>
 		</div>
 	</div>
+	 <% post.tag_list.each do |tag| %>
+    <div class="chip">
+      <%= tag %>
+      <% if user_signed_in? %>
+        <% if post.user == current_user %>
+          <i class="close material-icons close_question_tag" data-question-id="<%= post.id%>">close</i>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

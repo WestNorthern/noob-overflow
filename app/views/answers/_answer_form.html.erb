@@ -3,7 +3,7 @@
 		<div class="new_post_content card-content black-text">
 	  	<%= f.text_area :content, placeholder: 
 	  	'Type your answer here', class: 'white col s9', style: "min-height: 400px; margin-bottom: 20px; " %>
-	  	<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'Tags' %>
+	  	<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'Tags. Seperate with comma' %>
 			<%= f.hidden_field :question_id, value: @question.id %>
 			<%= f.submit class: "waves-effect waves-light btn right reply col s2" %>
 		</div>

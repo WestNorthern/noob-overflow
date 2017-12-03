@@ -18,6 +18,7 @@ class TagsController < ApplicationController
   end
 
   def destroy 
+
     puts "These are the params:"
     p params
     if params[:type] == "question"
@@ -31,7 +32,6 @@ class TagsController < ApplicationController
       @answer.save
     end
     
-
     # respond_to do |format| #we are expecting a certain call
     #   @tag = ActsAsTaggableOn::Tag.find(params[:id]).destroy
     #   format.js
