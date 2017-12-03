@@ -11,7 +11,7 @@
 						<% end %>
 					<% else %>
 						<%= link_to result do %>
-							<%= render result %>
+							<%= render partial: 'result', locals: {result: result} %>
 						<% end %>
 					<% end %>
 				<% end %>
