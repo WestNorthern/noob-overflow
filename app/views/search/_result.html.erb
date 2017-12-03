@@ -1,0 +1,17 @@
+<div class="result card">
+	<% if result.class.to_s == 'Answer' %>
+		<div class="result_rep">
+			<p><%= result.reputation %> Rep |</p>
+		</div>
+		<div class="result_content">
+			<%= result.content.truncate_words(25) %>
+		</div>
+	<% else %>
+		<div class="result_rep">
+			<p><%= result.reputation %> Rep |</p>
+		</div>
+		<div class="result_content">
+			<%= result.content.truncate_words(25) %>
+		</div>
+	<% end %>
+</div>

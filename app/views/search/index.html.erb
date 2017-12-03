@@ -4,7 +4,16 @@
 			<% if !@results.empty? %>
 				<h5 class="result-header card">Results For Tags Including: <%= @search.to_s.remove!('[', ']') %></h5>
 				<% @results.each do |result| %>
-					<%= render result %>
+				<h6><%= result.class %></h6>
+					<% if result.class.to_s == 'Answer' %>
+						<%= link_to question_url(result.question_id) do %>
+							<%= render partial: 'result', locals: {result: result} %>
+						<% end %>
+					<% else %>
+						<%= link_to result do %>
+							<%= render result %>
+						<% end %>
+					<% end %>
 				<% end %>
 			<% else %>
 				<h3 class="result-header card">There No are no results matching those tags.</h3>

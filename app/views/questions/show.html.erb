@@ -6,11 +6,15 @@
       <ul class="comments">
         <%= render(partial: 'comments/comment', collection: @question.comments) %>  
       </ul>
-    	<%= form_for [@question, Comment.new], scope: 'comment', remote: true do |f| %>
-    		<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
-    		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
-			<% end %>
+      <% if user_signed_in? %>
+          
+      	<%= form_for [@question, Comment.new], scope: 'comment', remote: true do |f| %>
+      		<%= f.hidden_field :user_id, value: @user.id %>
+  				<%= f.text_area :content, placeholder: "Add a comment", class: 'white col s9 m9', id: "comment-field" %>
+      		<%= f.submit 'Comment', :class => 'waves-effect waves-light btn right comment s2 m2', remote: true %>
+  			<% end %>
+
+      <% end %>
 		</div>
 	</div>
 </div>
@@ -22,5 +26,7 @@
   <% end %>
 </div>
 <div class="row">
-  <%= render '/answers/answer_form' %>
+  <% if user_signed_in? %>
+    <%= render '/answers/answer_form' %>
+  <% end %>
 </div>
