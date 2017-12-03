@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20171201180116) do
-
+    
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "question_id"
@@ -69,7 +68,6 @@ ActiveRecord::Schema.define(version: 20171201180116) do
     t.index ["reputatable_type", "reputatable_id"], name: "index_reputations_on_reputatable_type_and_reputatable_id"
     t.index ["user_id"], name: "index_reputations_on_user_id"
   end
-
 
   create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"

@@ -59,12 +59,14 @@
 		          </ul>
 		        </div>
 		        <div class="col s5">
-		          <form class="search-input">
-		            <div class="input-field">
-		            <input id="search" type="search" />
+		          <!-- <form class="search-input"> -->
+		            <div class="input-field search-input">
+		            <%= form_tag(search_index_path, method: 'get') do %>
+                	<%= text_field_tag :search, params[:search], :autocomplete => :on, :id => 'search', type: 'search' %>
+              	<% end %>
 		            <label for="search"><i class="material-icons">search</i></label>
 		            </div>
-		          </form>
+		          <!-- </form>searchit -->
 		        </div>
 		        <div class="col s5">
 		          <ul class="right">

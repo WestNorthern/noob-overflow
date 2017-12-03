@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
+  
   resources :posts do
   	resources :comments
     post "/positive_rep", to: 'posts#positive_rep'
