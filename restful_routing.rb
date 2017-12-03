@@ -86,5 +86,21 @@ cancel_user_registration GET    /users/cancel(.:format)                         
                          PATCH  /questions/:id(.:format)                            questions#update
                          PUT    /questions/:id(.:format)                            questions#update
                          DELETE /questions/:id(.:format)                            questions#destroy
+               tutorials GET    /tutorials(.:format)                                tutorials#index
+                         POST   /tutorials(.:format)                                tutorials#create
+            new_tutorial GET    /tutorials/new(.:format)                            tutorials#new
+           edit_tutorial GET    /tutorials/:id/edit(.:format)                       tutorials#edit
+                tutorial GET    /tutorials/:id(.:format)                            tutorials#show
+                         PATCH  /tutorials/:id(.:format)                            tutorials#update
+                         PUT    /tutorials/:id(.:format)                            tutorials#update
+                         DELETE /tutorials/:id(.:format)                            tutorials#destroy
+                  badges GET    /badges(.:format)                                   badges#index
+                         POST   /badges(.:format)                                   badges#create
+               new_badge GET    /badges/new(.:format)                               badges#new
+              edit_badge GET    /badges/:id/edit(.:format)                          badges#edit
+                   badge GET    /badges/:id(.:format)                               badges#show
+                         PATCH  /badges/:id(.:format)                               badges#update
+                         PUT    /badges/:id(.:format)                               badges#update
+                         DELETE /badges/:id(.:format)                               badges#destroy
             search_index GET    /search/index(.:format)                             search#index
                     root GET    /                                                   questions#index

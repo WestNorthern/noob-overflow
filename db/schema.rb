@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201180116) do
+ActiveRecord::Schema.define(version: 20171202231720) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 20171201180116) do
     t.string "tags"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "initiated", default: false
+    t.boolean "noob", default: false
+    t.boolean "pleb", default: false
+    t.boolean "hacker", default: false
+    t.boolean "ninja", default: false
+    t.boolean "dunce", default: false
+    t.boolean "seeker", default: false
+    t.boolean "helpful", default: false
+    t.boolean "mastermind", default: false
+    t.boolean "extrovert", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|

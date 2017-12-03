@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   resources :questions do
   	resources :comments
   end
+
+  resources :tutorials
+  resources :badges
   
   get 'search/index'
 
