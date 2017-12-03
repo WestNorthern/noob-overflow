@@ -28,11 +28,10 @@
 <% if current_user.badge == nil %>
 <div id="modal1" class="modal">
   <div class="modal-content">
-    <h4>Congratulations!</h4>
-    <p>You have won your first trophy!</p>
+    <h4>Now You're In!</h4>
+    <p>Now we will go check out your profile.</p>
   </div>
   <div class="modal-footer">
-    <a href="#!" id="init" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     <%= link_to "Yay!", badges_path(current_user.id), class: "waves-effect waves-light btn", method: :post %>
   </div>
 </div>

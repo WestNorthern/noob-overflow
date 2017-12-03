@@ -1,5 +1,39 @@
 <% if @user.deleted_at.nil? %>
 
+
+	<% if @user.badge %>
+
+		<% if @user.badge.initiated == false %>
+
+			<%= render 'badges/initiated'  %>
+
+			<div class="tap-target" data-activates="trophy-button">
+		    <div class="tap-target-content">
+		      <h5>Check Here!</h5>
+		      <p>To see what new trophies you have earned.</p>
+		    </div>
+		  </div>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" id="trophy-button" href="#initiated-modal">First Trophy!</a>
+
+		<% end %>
+
+		<% if @user.reputation > 50 && @user.badge.noob == false %>
+
+			<%= render 'badges/noob'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#noob-modal">New Trophy!</a>
+
+		<% end %>
+
+		<% if @user.reputation < -50 && @user.badge.dunce == false %>  
+
+				<%= render 'badges/dunce'  %>
+
+		 	<a class="waves-effect waves-light btn modal-trigger" href="#dunce-modal">New Trophy!</a>
+		<% end %>
+	<% end %>
+
 	<ul class="collapsible col s8 offset-s2 hoverable" data-collapsible="accordion">
 	  <li>
 	    <div class="collapsible-header">
@@ -59,8 +93,15 @@
 	  <li>
 	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Trophies</div>
 	    <div class="collapsible-body">
-	    	<span>
-	    		<% if @user %>
+	    	<span class="row">
+	    		<% if @user.badge %>
+	    			<span class="col s2">
+		    			<% if @user.badge.initiated == true %>
+		    				<span class="card">Trophy!</span>
+		    			<% else %>
+		    				<span class="card">No Trophy...</span>
+		    			<% end %>
+	    			</span>
 	    		<% else %>
 	    			<h1>Ya Got Nothin'</h1>
 	    		<% end %>
@@ -81,4 +122,9 @@
 
 <script>
 	$('.collapsible').collapsible();
+
+  $('.modal').modal();
+
+  $('.tap-target').tapTarget('open');
+  
 </script>

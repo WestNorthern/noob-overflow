@@ -1,4 +1,4 @@
-<% if current_user.badge == nil %>
+<% if current_user && current_user.badge == nil %>
 	<ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header active"></div>

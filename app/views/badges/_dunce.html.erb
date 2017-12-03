@@ -1,0 +1,14 @@
+<div id="dunce-modal" class="modal">
+  <div class="modal-content">
+    <h4>Dunce!</h4>
+    <p> You have accrued quite a deficit of reputation. You may want to rethink how you are posing questions and proferring answers...</p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Um...Okay!", badge_path(current_user.id, 'dunce'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

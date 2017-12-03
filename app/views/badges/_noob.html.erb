@@ -1,0 +1,14 @@
+<div id="noob-modal" class="modal">
+  <div class="modal-content">
+    <h4>Noob!</h4>
+    <p>You've been awarded the Noob Trophy! Congratulations on joining our community. Keep gaining reputation by asking questions and by answering other noobs' questions. </p>
+  </div>
+  <div class="modal-footer">
+		<%= link_to "Yay!", badge_path(current_user.id, 'noob'), class: "waves-effect waves-light btn", method: :patch %>		    
+	</div>
+</div>
+
+
+<script>
+	$('.modal').modal();
+</script>

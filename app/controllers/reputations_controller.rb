@@ -16,6 +16,11 @@ class ReputationsController < ApplicationController
   	elsif !Reputation.where(user_id: @user.id, reputatable_id: @reputatable.id, rep_given: false).exists? and @reputation.rep_given == false
 	 		@reputation.save
 	  	@rep_user.increment!('reputation', -5)
+      if @rep_user.badge
+        if @rep_user.reputation < -50 and @rep_user.badge.dunce == false
+          @rep_user.badge.dunce = true
+        end
+      end
 	  	@reputatable.increment!('reputation', -5)
 	  	@user.increment!('reputation', -10)
       respond_to do |format|
