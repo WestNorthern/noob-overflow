@@ -34,12 +34,12 @@ $slate: #EAE3EA;
 $seafoam: #A7B3A5;
 
 
-// $navbar-color: $eggplant;
-// $navbar-text: $sand;
-// $accent-color: $grape;
-// $content-color: $shell;
-// $background-color: $sand;
-// $button-color: $grape;
+$navbar-color: $eggplant;
+$navbar-text: $sand;
+$accent-color: $grape;
+$content-color: ghostwhite;
+$background-color: $slate;
+$button-color: $grape;
 
 
 // $navbar-color: $mint;
@@ -50,12 +50,12 @@ $seafoam: #A7B3A5;
 // $button-color: $rust;
 
 
-$navbar-color: $mint;
-$navbar-text: $rust;
-$accent-color: $seafoam;
-$content-color: ghostwhite;
-$background-color: $slate;
-$button-color: $rust;
+// $navbar-color: $mint;
+// $navbar-text: $rust;
+// $accent-color: $seafoam;
+// $content-color: ghostwhite;
+// $background-color: $slate;
+// $button-color: $rust;
 
 nav{
 	li {
@@ -89,7 +89,7 @@ nav{
 	background: $navbar-color;
 }
 
-input[id="search"] {
+#search {
 	height: 40px !important; 
 	margin-top: 10px;
 	border-radius: 10px !important;
