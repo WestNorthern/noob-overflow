@@ -158,20 +158,50 @@
 	  <li>
 	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Trophies</div>
 	    <div class="collapsible-body">
-	    	<span class="row">
+	    	<div class="row">
 	    		<% if @user.badge %>
-	    			<span class="col s2">
+	    			<div class="col s2 card">
 		    			<% if @user.badge.initiated == true %>
-		    				<span class="card">Trophy!</span>
+			    			<div class="card-content">
+		              <span class="card-title">Init</span>
+		              <%= image_tag("theeye.png", :alt => "Eye", class: "trophy-image") %>
+		              <p>
+		              	You've been initiated.
+		              </p>
+	            	</div>
 		    			<% else %>
-		    				<span class="card">No Trophy...</span>
+		    				<div class="card-content not-yet hazey">
+	              	<span class="card-title">Init</span>
+	              	<%= image_tag("theeye.png", :alt => "Eye") %>
+            		</div>
 		    			<% end %>
-	    			</span>
+	    			</div>
+
+	    			<div class="col s2 card offset-s1">
+		    			<% if @user.badge.noob == true %>
+			    			<div class="card-content">
+		              <span class="card-title">Noob</span>
+		              <%= image_tag("bunny.png", :alt => "Bunny", class: "trophy-image") %>
+		              <p>
+		              	Blessed are the noobs, for they shall inherit the class.
+		              </p>
+	            	</div>
+		    			<% else %>
+		    				<div class="card-content not-yet hazey">
+	              	<span class="card-title">Noob</span>
+	              	<%= image_tag("bunny.png", :alt => "Bunny", class: "trophy-image") %>
+	              	<p>
+		              	<br>
+		              	<br>
+		              </p>
+            		</div>
+		    			<% end %>
+	    			</div>
 	    		<% else %>
 	    			<h1>Ya Got Nothin'</h1>
 	    		<% end %>
 
-	    	</span>
+	    	</div>
 	    </div>
 	  </li>
 	</ul>
