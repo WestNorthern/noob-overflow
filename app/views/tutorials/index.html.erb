@@ -1,16 +1,117 @@
-<h1>Welcome to Noob Overflow!</h1>
+<div class="opening" style="text-align: center;">
+<h2>Welcome to Noob Overflow!</h2>
 
-<h4>We are going to take you through the way our community works. Follow along and we will teach you how to be cool. If you make it to the end, we will give you a trophy!</h4>
+<p>
+  <strong>Noob Overflow</strong> is a question and answer site for beginning programmers and those that are sympathetic to the struggle that is learning to code. With your help, we're working together to build a library of detailed, beginner-friendly answers to every question about programming.
+</p>
 
-<div class="row">
-	<div class="longcard card hoverable">
-	
-	</div>
 </div>
 
+<br>
+<br>
+<hr>
+<br>
+
+<div class="row longcard">
+	<div class="card s10 offset-1">
+    <div class="card-title">Questions</div>
+    <div class="card-content">
+      This site is designed so that you can ask specific questions and recieve focused and detailed answers. In the Questions and Answers section it is generally discouraged to ask for opinions regarding open ended questions. This is to avoid lengthy discussions, and encourage people to provide the most direct answer to solve the problem at hand.
+      <br><br>
+    </div>
+    <div class="card-title">You should ask about...</div>
+      <ul class="collection">
+        <li class="collection-item">Specific programming problems</li>
+        <li class="collection-item">Coding techniques and best practices</li>
+        <li class="collection-item">Which energy drink is best suited to the task</li>
+        <li class="collection-item">Software development tools</li>
+        <li class="collection-item">Software algorithms</li>
+      </ul>
+
+    <div class="card-title">You should avoid asking...</div>
+      <ul class="collection">
+        <li class="collection-item">Questions you haven't tried to find an answer for - half the battle is trying to figure it out yourself!
+        <li class="collection-item">Product or service recommendations or comparisons</li>
+        <li class="collection-item">Requests for lists of things, polls, opinions, discussions, etc.</li>
+        <li class="collection-item">Which Beatle is the most talented</li>
+        <li class="collection-item">Anything not directly related to writing computer programs</li>
+      </ul>
+    <div class="card-title">Here is an example of a very standard question:</div>
+    <br>
+    <div class="card-content">
+      <%= image_tag("question-ex.png", :alt => "Question Example", class: "tutorial-image") %>   
+    </div>  
+	</div>
+
+  <div class="card s10 offset-1">
+    <div class="card-title">Answers</div>
+    <div class="card-content">
+      When answering a question, remember to be patient and think about what it was like when you were tackling problems as a noob. Take a tip from people who have high reputation: people are pickin' up what they're puttin' down. 
+
+    </div>
+
+    <div class="card-title">Here is an example of a very good answer:</div>
+    <br>
+    <div class="card-content">
+      <%= image_tag("answer-ex.png", :alt => "Answer Example", class: "tutorial-image") %>   
+    </div>  
+  </div>
+
+  <div class="card s10 offset-1">
+    <div class="card-title">Votes</div>
+    <div class="card-content">
+      <h4>Upvotes</h4>
+      You can frame a Question or post an Answer in any style you like. Feel free to be you! Your Answer will be voted on by the community, and that vote will affect your reputation. If your Answer is clear, other people will use their reputation points to <em>upvote</em> your Answer. Each upvote is worth 5 points. The answer with the most upvotes will be listed at the top, close to the question.
+
+      <br>
+      <br>
+      <br>
+      <h4>Downvotes</h4>
+
+      User can also use their reputation to <em>downvote</em> a Question, Answer or Post; stripping it of 5 reputation points.
 
 
-<div class="thingy"></div>
+    </div>
+
+    <div class="card-title">The vote bar looks like this . . . </div>
+    <br>
+    <div class="card-content">
+      <%= image_tag("vote-ex.png", :alt => "Question Example", class: "") %>   
+    </div>  
+  </div>
+
+
+  <div class="card s10 offset-1">
+    <div class="card-title">Trophies</div>
+    <div class="card-content">
+      Your gains in reputation and activity in the community will be rewarded with Trophies. Earning some trophies will give you priveleges and powers to help you cultivate our community.
+      <br>
+      <br>
+
+      When you have accrued 500 reputation points, you will be able to create blog posts! Our blog takes common questions and expounds on them in great detail. Git gud, and you can share your knowledge with those who are still new in their learning.
+
+      <br>
+      <br>
+
+
+    </div>
+
+    <div class="card-title">Collect 'em all!</div>
+    <br>
+    <div class="card-content">
+      <%= image_tag("badge-ex.png", :alt => "Question Example", class: "tutorial-image") %>   
+    </div>  
+  </div>
+  <br>
+  <br>
+  <br>
+  
+
+  <div id="thingy">
+    <h1>Thanks for reading the tutorial!</h1>
+  </div>
+</div>
+
 
 <br>
 <br>
@@ -56,7 +157,7 @@
 	$(document).ready(function(){
 		$('.modal').modal();
 		var options = [
-	    {selector: '.thingy', offset: 0, callback: function(el) {
+	    {selector: '#thingy', offset: 0 , callback: function(el) {
 	      $('#modal1').modal('open');
 	    } },
   ];
