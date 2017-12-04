@@ -6,6 +6,9 @@
 	  	<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'Tags. Seperate with comma' %>
 			<%= f.hidden_field :question_id, value: @question.id %>
 			<%= f.submit class: "waves-effect waves-light btn right reply col s2" %>
+			<br>
+			<br>
+			<br>
 		</div>
-	<% end -%>
+	<% end %>
 </div>
