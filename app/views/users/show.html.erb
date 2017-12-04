@@ -31,6 +31,7 @@
 				<%= render 'badges/dunce'  %>
 
 		 	<a class="waves-effect waves-light btn modal-trigger" href="#dunce-modal">Dunce Trophy?</a>
+		 	
 		<% end %>
 
 		<% if @user.reputation >= 200 && @user.badge.pleb == false %>  
@@ -95,6 +96,7 @@
 				<%= render 'badges/mastermind'  %>
 
 		 	<a class="waves-effect waves-light btn modal-trigger" href="#mastermind-modal">Mastermind Trophy!</a>
+
 		<% end %>
 
 	<% end %>
@@ -110,15 +112,15 @@
 		    	<h5> <i class="material-icons left">filter_drama</i>	<%= @user.username %> </h5>
 		    	Reputation: <%= @user.reputation %>
 		    	<br>
-		    	<% if @user.reputation < 20 %>
+		    	<% if @user.reputation > 20 && @user.reputation < 200 %>
 		    		<p>Rank: n00b</p>
-		    	<% elsif @user.reputation < 200 %>
+		    	<% elsif @user.reputation > 200 && @user.reputation < 600 %>
 		    		<p>Rank: pl3b</p>
-		    	<% elsif @user.reputation < 600 %>
+		    	<% elsif @user.reputation > 600 && @user.reputation < 900 %>
 		    		<p>Rank: h@x0r</p>
-		    	<% elsif @user.reputation < 900 %>
+		    	<% elsif @user.reputation > 900 && @user.reputation < 1200 %>
 		    		<p>Rank: 1337</p>
-		    	<% elsif @user.reputation < 1200 %>
+		    	<% elsif @user.reputation > 1200 && @user.reputation < 5000 %>
 		    		<p>Rank: codebae</p>
 		    	<% elsif @user.reputation > 5000 %>
 		    		<p>Rank: ninj@</p>
@@ -173,6 +175,7 @@
 
 
 <script>
+
 	$('.collapsible').collapsible();
 
   $('.modal').modal();
