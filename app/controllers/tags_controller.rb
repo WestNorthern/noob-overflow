@@ -31,6 +31,11 @@ class TagsController < ApplicationController
       @answer.tag_list.remove(params[:tag_name])
       @answer.save
     end
+     if params[:type] == "post"
+      @post = Post.find(params[:id])
+      @post.tag_list.remove(params[:tag_name])
+      @post.save
+    end
     
     # respond_to do |format| #we are expecting a certain call
     #   @tag = ActsAsTaggableOn::Tag.find(params[:id]).destroy

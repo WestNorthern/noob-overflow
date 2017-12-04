@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
-	$(document).on 'click', '.chip .close_tag', ->
+	$(document).on 'click', '.chip .close_question_tag', ->
 		tag_text = $(this).parent().clone().children().remove().end().text().trim()
 		question_id = $(this).attr('data-question-id')
 		console.log(tag_text)
