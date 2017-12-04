@@ -70,3 +70,5 @@ gem 'paranoia', '~> 2.4'
 gem "redcarpet"
 # CodeRay helps with syntax highlighting
 gem 'coderay'
+# Seed_dump fills the seed with our test data
+gem 'seed_dump'
