@@ -1,0 +1,265 @@
+<div class="row">
+	<% if @user.badge %>
+		<div class="col s2 card">
+			<% if @user.badge.initiated == true %>
+  			<div class="card-content">
+          <span class="card-title">Init</span>
+          <%= image_tag("theeye.png", :alt => "Eye", class: "trophy-image") %>
+          <p>
+          	You've been initiated.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Init</span>
+        	<%= image_tag("theeye.png", :alt => "Eye") %>
+    		</div>
+			<% end %>
+		</div>
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.noob == true %>
+  			<div class="card-content">
+          <span class="card-title">Noob</span>
+          <%= image_tag("bunny.png", :alt => "Bunny", class: "trophy-image") %>
+          <p>
+          	Blessed are the noobs, for they shall inherit the class.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Noob</span>
+        	<%= image_tag("bunny.png", :alt => "Bunny", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.pleb == true %>
+  			<div class="card-content">
+          <span class="card-title">Pl3b</span>
+          <%= image_tag("pawn.png", :alt => "Pawn", class: "trophy-image") %>
+          <p>
+          	You are new, but some day you could be Queen.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Pl3b</span>
+        	<%= image_tag("pawn.png", :alt => "Bunny", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+			<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.hacker == true %>
+  			<div class="card-content">
+          <span class="card-title">h@x0r</span>
+          <%= image_tag("hacker.png", :alt => "Axes", class: "trophy-image") %>
+          <p>
+          	Hackity hack hackin'.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">h@x0r</span>
+        	<%= image_tag("hacker.png", :alt => "Axes", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card">
+			<% if @user.badge.codebae == true %>
+  			<div class="card-content">
+          <span class="card-title">Codebae</span>
+          <%= image_tag("bae.png", :alt => "Josh Chan", class: "trophy-image") %>
+          <p>
+          	You are safe and reliable. You are bae.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Codebae</span>
+        	<%= image_tag("bae.png", :alt => "Josh Chan", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.leet == true %>
+  			<div class="card-content">
+          <span class="card-title">1337</span>
+          <%= image_tag("genius.png", :alt => "1337", class: "trophy-image") %>
+          <p>
+          	You might be covered in cheeto dust, but you're a winner. Crack a Dew and celebrate!
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">1337</span>
+        	<%= image_tag("genius.png", :alt => "1337", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.ninja == true %>
+  			<div class="card-content">
+          <span class="card-title">Ninj@</span>
+          <%= image_tag("ninja.png", :alt => "Ninja", class: "trophy-image") %>
+          <p>	
+          	はい。一日中私はハックする
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Ninj@</span>
+        	<%= image_tag("ninja.png", :alt => "Ninja", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.extrovert == true %>
+  			<div class="card-content">
+          <span class="card-title">Extrovert</span>
+          <%= image_tag("extrovert.png", :alt => "Extrovert", class: "trophy-image") %>
+          <p>
+          	Blessed are the noobs, for they shall inherit the class.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Extrovert</span>
+        	<%= image_tag("extrovert.png", :alt => "Extrovert", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card">
+			<% if @user.badge.seeker == true %>
+  			<div class="card-content">
+          <span class="card-title">Seeker</span>
+          <%= image_tag("seeker.png", :alt => "Seeker", class: "trophy-image") %>
+          <p>
+          	 CTRL + F and ye shall find.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Seeker</span>
+        	<%= image_tag("seeker.png", :alt => "Seeker", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.dunce == true %>
+  			<div class="card-content">
+          <span class="card-title">Dunce . . .</span>
+          <%= image_tag("dunce.png", :alt => "Dunce", class: "trophy-image") %>
+          <p>
+          	A 4-dimensional bubble casts a 3-dimensional shadow! 
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Dunce . . .</span>
+        	<%= image_tag("dunce.png", :alt => "Dunce", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.mastermind == true %>
+  			<div class="card-content">
+          <span class="card-title">Mastermind</span>
+          <%= image_tag("crysball.png", :alt => "Crystal Ball", class: "trophy-image") %>
+          <p>
+          	A 4-dimensional bubble casts a 3-dimensional shadow!
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Mastermind</span>
+        	<%= image_tag("crysball.png", :alt => "Crystal Ball", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+    	<% end %>
+    </div>
+
+
+		<div class="col s2 card offset-s1">
+			<% if @user.badge.helpful == true %>
+  			<div class="card-content">
+          <span class="card-title">Helpful</span>
+          <%= image_tag("sharkbun.png", :alt => "Shark and Rabbit Fight", class: "trophy-image") %>
+          <p>
+          	Blessed are the noobs, for they shall inherit the class.
+          </p>
+      	</div>
+			<% else %>
+				<div class="card-content not-yet hazey">
+        	<span class="card-title">Helpful</span>
+        	<%= image_tag("sharkbun.png", :alt => "Shark and Rabbit Fight", class: "trophy-image") %>
+        	<p>
+          	<br>
+          	<br>
+          </p>
+    		</div>
+			<% end %>
+		</div>
+
+	<% else %>
+		<h1>Ya Got Nothin'</h1>
+	<% end %>
+
+</div>

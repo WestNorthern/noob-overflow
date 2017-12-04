@@ -158,50 +158,7 @@
 	  <li>
 	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Trophies</div>
 	    <div class="collapsible-body">
-	    	<div class="row">
-	    		<% if @user.badge %>
-	    			<div class="col s2 card">
-		    			<% if @user.badge.initiated == true %>
-			    			<div class="card-content">
-		              <span class="card-title">Init</span>
-		              <%= image_tag("theeye.png", :alt => "Eye", class: "trophy-image") %>
-		              <p>
-		              	You've been initiated.
-		              </p>
-	            	</div>
-		    			<% else %>
-		    				<div class="card-content not-yet hazey">
-	              	<span class="card-title">Init</span>
-	              	<%= image_tag("theeye.png", :alt => "Eye") %>
-            		</div>
-		    			<% end %>
-	    			</div>
-
-	    			<div class="col s2 card offset-s1">
-		    			<% if @user.badge.noob == true %>
-			    			<div class="card-content">
-		              <span class="card-title">Noob</span>
-		              <%= image_tag("bunny.png", :alt => "Bunny", class: "trophy-image") %>
-		              <p>
-		              	Blessed are the noobs, for they shall inherit the class.
-		              </p>
-	            	</div>
-		    			<% else %>
-		    				<div class="card-content not-yet hazey">
-	              	<span class="card-title">Noob</span>
-	              	<%= image_tag("bunny.png", :alt => "Bunny", class: "trophy-image") %>
-	              	<p>
-		              	<br>
-		              	<br>
-		              </p>
-            		</div>
-		    			<% end %>
-	    			</div>
-	    		<% else %>
-	    			<h1>Ya Got Nothin'</h1>
-	    		<% end %>
-
-	    	</div>
+				<%= render 'badges/trophies'  %>
 	    </div>
 	  </li>
 	</ul>
