@@ -158,20 +158,7 @@
 	  <li>
 	    <div class="collapsible-header"><i class="material-icons">whatshot</i>Trophies</div>
 	    <div class="collapsible-body">
-	    	<span class="row">
-	    		<% if @user.badge %>
-	    			<span class="col s2">
-		    			<% if @user.badge.initiated == true %>
-		    				<span class="card">Trophy!</span>
-		    			<% else %>
-		    				<span class="card">No Trophy...</span>
-		    			<% end %>
-	    			</span>
-	    		<% else %>
-	    			<h1>Ya Got Nothin'</h1>
-	    		<% end %>
-
-	    	</span>
+				<%= render 'badges/trophies'  %>
 	    </div>
 	  </li>
 	</ul>

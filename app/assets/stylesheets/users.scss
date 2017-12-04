@@ -50,3 +50,17 @@
 	top: 5%;
 
 }
+
+.trophy-image {
+	width: 100px;
+	height: 100px;
+}
+
+.hazey {
+	position: relative;
+	left: -7%;
+	z-index: 1;
+	background: rgba(0,0,0,.4);
+	width: 114%;
+	height: 100%;
+}

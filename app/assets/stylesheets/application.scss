@@ -34,12 +34,12 @@ $slate: #EAE3EA;
 $seafoam: #A7B3A5;
 
 
-$navbar-color: $eggplant;
-$navbar-text: $sand;
-$accent-color: $grape;
-$content-color: $shell;
-$background-color: $sand;
-$button-color: $grape;
+// $navbar-color: $eggplant;
+// $navbar-text: $sand;
+// $accent-color: $grape;
+// $content-color: $shell;
+// $background-color: $sand;
+// $button-color: $grape;
 
 
 // $navbar-color: $mint;
@@ -95,6 +95,7 @@ input[id="search"] {
 	border-radius: 10px !important;
 	cursor: pointer;
 }
+
 .search-input{
 	background-color: $accent-color;
 	height: 40px !important; 
