@@ -13,7 +13,7 @@
 
   <body>
 		<% if user_signed_in? %>
- 	  	<ul id="user-dropdown" class="dropdown-content">
+ 	  	<ul id="user-dropdown" class="dropdown-content purple darken-3">
  	  		<li><%= link_to "View Profile", user_path(current_user) %></li>
 	  		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
 	  		<li class="divider"></li>
@@ -47,7 +47,7 @@
 		        </div>
 		        <div class="col s5">
 		          <ul class="right">
-	            	<li><%= link_to "View Blog Posts", posts_path %></li>
+	            	
 		            <% if user_signed_in? %>
  	      					<li> <%= link_to "Ask Question", new_question_path %></li>
 		      				<li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><%= current_user.username %>
@@ -57,6 +57,7 @@
 	        				<li><%= link_to "Login", new_user_session_path %></li>
 		        			<li><%= link_to "Create Account", new_user_registration_path %></li>
 	        			<% end %>
+	        			<li><%= link_to "Blog", posts_path %></li>
 		          </ul>
 		        </div>
 		      </div>
