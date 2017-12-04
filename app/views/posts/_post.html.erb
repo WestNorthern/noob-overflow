@@ -9,8 +9,8 @@
 			<% if user_signed_in? %>
 				<div style="float: right;">
 				  <% if post.user.id == current_user.id %>
-				    <%= link_to "Edit Post", edit_post_path(post) %>
-				    <%= link_to "Delete", post, method: :delete, remote: true, class: 'post_delete' %>
+				    <%= link_to "edit", edit_post_path(post), class: 'material-icons color_black' %>
+				    <%= link_to "delete", post, method: :delete, remote: true, class: 'post_delete color_black material-icons' %>
 				  <% end %>
 			  </div>
 		  <% end %>

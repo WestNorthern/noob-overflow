@@ -5,6 +5,12 @@
   <h4 style="text-align: center;"><%= question.title %></h4>
   <br>
   <p><%= markdown(question.content) %></p>
+  <div class="style_buttons">
+    <% if question.user == current_user %>
+      <%= link_to "edit", edit_question_path(question), class: 'material-icons color_black' %> 
+      <%= link_to 'delete',  question, class: 'material-icons color_black',   method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
 </div>
 <div class="card-action">
   <small>
@@ -17,10 +23,6 @@
     <%= question.created_at.strftime("on %m/%d/%Y") %> 
     <%= question.created_at.strftime("at %I:%M%p") %>
   </small> <br>
-  <% if question.user == current_user %>
-    <a href="#"> <%= link_to "Edit Question", edit_question_path(question) %> </a>
-    <a href="#"> <%= link_to 'Destroy',  question,  method: :delete, data: { confirm: 'Are you sure?' } %> </a>
-  <% end %>
   <% question.tag_list.each do |tag| %>
     <div class="chip">
       <%= tag %>
