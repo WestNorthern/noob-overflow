@@ -42,9 +42,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    respond_to do |format| 
-      @post = Post.find(params[:id]).destroy
+    respond_to do |format|
+      @post = current_user.posts.find(params[:id]).destroy
       format.js
+      redirect_to posts_path
       format.html {redirect_to posts_path}
     end
   end

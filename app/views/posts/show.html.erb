@@ -3,11 +3,11 @@
 		<div class="card hoverable">
 			<div class="card-content">
 					<%= render @post %>
+					<ul class="comments">
+		  			<%= render(partial: 'comments/comment', collection: @post.comments) %>	
+					</ul>
 			</div>
 			
-			<ul class="comments">
-  			<%= render(partial: 'comments/comment', collection: @post.comments) %>	
-			</ul>
 			<% if user_signed_in? %>
 				
 				<div class="row card-panel grey lighten-3">

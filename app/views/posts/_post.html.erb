@@ -56,7 +56,7 @@
       <%= tag %>
       <% if user_signed_in? %>
         <% if post.user == current_user %>
-          <i class="close material-icons close_question_tag" data-question-id="<%= post.id%>">close</i>
+          <i class="close material-icons close_post_tag" data-post-id="<%= post.id%>">close</i>
         <% end %>
       <% end %>
     </div>

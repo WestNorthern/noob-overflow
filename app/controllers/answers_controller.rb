@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
   end
 
   def update
-    @answer = Answer.find(params[:id])
+    @answer = current_user.answers.find(params[:id])
     respond_to do |format|
       if @answer.update_attributes(answer_params)
         format.html { redirect_to(@answer, :notice => 'Answer was successfully updated.') }
@@ -40,7 +40,7 @@ class AnswersController < ApplicationController
 
   def destroy
     respond_to do |format| #we are expecting a certain call
-      @answer = Answer.find(params[:id]).destroy
+      @answer = current_user.answers.find(params[:id]).destroy
       format.js
     end
   end
