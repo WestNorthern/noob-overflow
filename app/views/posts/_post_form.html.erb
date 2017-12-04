@@ -19,9 +19,9 @@
 						</div>
 					</div>
 					<div class="card-content">
-						<%= f.text_area :content, placeholder: 'Content' %>
+						<%= f.text_area :content, placeholder: 'Content', style: 'height: 500px;' %>
 						<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'Tags' %>
-						<%= f.submit class: "post_submit" %>
+						<%= f.submit class: "post_submit waves-effect waves-light btn" %>
 					</div>
 				<% end %>
 			<% end %>
