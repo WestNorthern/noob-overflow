@@ -1,43 +1,30 @@
 # README
 
-noob overflow
+### Noob Overflow
 
-# User:
+---
 
-* sign up
-* sign in
-* sign out
-* delete account
+#### About Noob Overflow
 
-* post questions
-* post/delete comments
-* up/down vote comments
+This is a website similar to stack overflow, where a user community can post questions and have thm answered by other users. The questions and answers can be upvoted or downvoted by the community, so that the best (or at least most liked) answers rise to the top.
 
-* user is notified by e-mail when a question has been answered
-* user can customize profile (with trophies displayed)
-* users profiles can be viewed
-* users can gain and lose reputation
-* users gains achievements (trophies) for reputation gained
+**Noob Overflow**'s mission is to encourage beginners to start participating right away. They are given reputation to spend right away, and the underlying philosophy of the community dictates that no one will be condescended to, and no questions are too stupid. For answering all of the repetitive questions, users are instructed to give specific help when possible, or reply with a link to one of our community _blog posts_ that can explain the underlying thought processes required to solve the problem.
 
+#### Getting Started
+Download the rails project directory, and in the terminal run bundle install, load the schema and populate it with the seed file, like so:
 
-# Question:
+```sh
+$ bundle install
+$ rails db:schema:load
+$ rails db:seed
+```
 
-* user can post question
-* questions are displayed on index page
-* questions have tags
-* question track and display number of views
-* questions can be up/down voted
-* questions can be commented on
-* questions are searchable (by tags)
+Start the rails local server:
 
-# Comments:
+```sh
+$ rails s
+```
 
-* comments can be up/down voted
-* comments can include tags
-* comments are searchable (by tags)
+And then in your browser visit: localhost:3000.
 
-# Blogs:
-
-* user can view blog pages
-* blogs are searchable (by tags)
-* users can comment on blog posts
+Feel free to create an account and explore!
