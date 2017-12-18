@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_many :questions
+  has_many :reputations
   has_many :answers
   has_many :posts
   has_many :comments, as: :commentable
