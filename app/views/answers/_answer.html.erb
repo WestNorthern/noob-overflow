@@ -3,6 +3,7 @@
     <div class="card hoverable">
 
  			<%= render partial: 'reputations/reputation', locals: {rep_object: answer} %>
+ 			<%= render partial: 'answers/favorite', locals: {answer: answer} %>
 
       <div class="card-content">
       	<% if user_signed_in? %>

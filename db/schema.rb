@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204195248) do
+ActiveRecord::Schema.define(version: 20171218184840) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171204195248) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tags"
+    t.boolean "favorite", default: false
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 20171204195248) do
     t.integer "reputation", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "has_fave", default: false
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 

@@ -203,4 +203,23 @@ pre {
 	height: 70px;
 }
 
+.fave-star-full {
+	position: absolute;
+	left: -5.9%;
+	top: 55%;
+	height: 30px;
+	width: 30px;
+	background: yellow;
+	-webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 
+}
+.fave-star-hollow {
+	position: absolute;
+	left: -5.9%;
+	top: 55%;
+	height: 30px;
+	width: 30px;
+	background: gray;
+	-webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+}

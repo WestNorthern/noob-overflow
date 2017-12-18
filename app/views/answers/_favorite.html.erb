@@ -1,0 +1,15 @@
+<% if answer.favorite == true && answer.user.id == current_user.id %>
+	<%= link_to favorite_path(answer.id), method: :patch, remote: true do %>
+		<div class="fave-star-full"></div>
+	<% end %>
+<% end %>
+
+<% if answer.favorite == true && answer.user.id != current_user.id %>
+	<div class="fave-star-full"></div>
+<% end %>
+
+<% if answer.favorite == false && answer.question.user.id == current_user.id && answer.question.has_fave == false %>
+	<%= link_to favorite_path(answer.id), method: :patch, remote: true do %>
+		<div class="fave-star-hollow"></div>
+	<% end %>
+<% end %>
