@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :answers do
     resources :comments
   end
+
+  resources :favorites
   
   
   resources :posts do
