@@ -14,6 +14,7 @@ def update
 		@answer.question.has_fave = false
 		@answer.question.save
 	end
+	redirect_to @answer.question
 end
 
 
