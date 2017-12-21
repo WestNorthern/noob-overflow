@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
   database: noob_production
   username: postgres
   password: 'password'
