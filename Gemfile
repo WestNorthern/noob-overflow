@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.2'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,6 +9,8 @@ end
 gem 'acts-as-taggable-on'
 
 gem 'mail', '~> 2.6.0'
+
+gem 'pg'
 
 gem 'pony', '~> 1.11'
 
